@@ -4,7 +4,7 @@ services:
   sonarqube:
     image: sonarqube:lts
     ports:
-      - "9000:9000"
+      - "80:9000"
     networks:
       - sonarnet
     environment:
@@ -36,7 +36,6 @@ services:
     build: plugins
     volumes_from:
      - plugins
-    restart: never
 
 networks:
   sonarnet:
