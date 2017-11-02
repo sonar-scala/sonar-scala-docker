@@ -2,7 +2,7 @@ version: "2"
 
 services:
   sonarqube:
-    image: sonarqube:lts
+    image: sonarqube:5.6.7-alpine # lts
     ports:
       - "80:9000"
     networks:
@@ -13,7 +13,7 @@ services:
       - plugins
 
   db:
-    image: postgres
+    image: postgres:9 # sonarqube 5 isn't compatible with postgres 10
     networks:
       - sonarnet
     environment:
