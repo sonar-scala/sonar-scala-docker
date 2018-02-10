@@ -13,12 +13,22 @@ Once docker pulls all the required images and starts up the containers, the appl
 
 
 ## Dependencies
- * [SonarQube 5.6.7 LTS](https://hub.docker.com/_/sonarqube)
- * [PostgreSQL 9](https://hub.docker.com/_/postgres)
+ * [SonarQube 6.7.1 LTS](https://hub.docker.com/_/sonarqube)
+ * [PostgreSQL 10.2](https://hub.docker.com/_/postgres)
  * External SonarQube plugins:
-   * [Sagacify/sonar-scala](https://github.com/Sagacify/sonar-scala) - provides support for scalastyle and scoverage.
+   * [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for scalastyle and scoverage.
    * [arthepsy/sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) - adds scapegoat inspections.
 
+
+## Compatibility Matrix
+Version | SonarQube version
+--------|------------------
+[2.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.0.0)   | 6.7.1 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([what's new](https://www.sonarqube.org/sonarqube-6-7-lts))
+[1.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/1.0.0)   | 5.6.7 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE56/Documentation))
+
+
+## Recommendations
+[sbt-sonar](https://github.com/mwz/sbt-sonar) is an sbt plugin which provides a way to automate analysis of Scala projects with SonarQube.
 
 ## License
 The project is licensed under the Apache License v2. See the [LICENSE file](LICENSE) for more details.

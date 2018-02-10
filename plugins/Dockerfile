@@ -1,10 +1,15 @@
-FROM alpine:3.6
+FROM alpine:3.7
 
-RUN apk --no-cache add --repository http://dl-4.alpinelinux.org/alpine/v3.6/community wget ca-certificates
+ENV SONAR_SCAPEGOAT_VERSION 1.3.0
+ENV SONAR_SCALA_VERSION 6.0.0
+
+RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/community wget ca-certificates
 
 WORKDIR /tmp/sonarqube/plugins
-RUN wget https://github.com/Sagacify/sonar-scala/releases/download/v0.0.3/sonar-scala-plugin-0.0.3.jar
-RUN wget https://github.com/arthepsy/sonar-scala-extra/releases/download/v1.3.0/sonar-scapegoat-plugin-1.3.0.jar
+RUN wget -O "sonar-scapegoat-plugin-${SONAR_SCAPEGOAT_VERSION}.jar" \
+    "https://github.com/arthepsy/sonar-scala-extra/releases/download/v${SONAR_SCAPEGOAT_VERSION}/sonar-scapegoat-plugin-${SONAR_SCAPEGOAT_VERSION}.jar"
+RUN wget -O "sonar-scala-plugin-${SONAR_SCALA_VERSION}.jar" \
+    "https://dl.bintray.com/mwz/maven/com/github/mwz/sonar-scala_2.12/${SONAR_SCALA_VERSION}/sonar-scala_2.12-${SONAR_SCALA_VERSION}-assembly.jar"
 VOLUME /opt/sonarqube
 
 CMD cp -R /tmp/sonarqube/plugins/* /opt/sonarqube/extensions/plugins
