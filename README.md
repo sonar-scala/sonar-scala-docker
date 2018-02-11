@@ -21,14 +21,19 @@ Once docker pulls all the required images and starts up the containers, the appl
 
 
 ## Compatibility Matrix
-Version | SonarQube version
---------|------------------
-[2.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.0.0)   | 6.7.1 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([what's new](https://www.sonarqube.org/sonarqube-6-7-lts))
-[1.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/1.0.0)   | 5.6.7 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE56/Documentation))
+Version | SonarQube | sonar-scala | sonar-scapegoat |
+--------|-------------------------|-----------------|
+[2.1.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.0.0), [2.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.0.0) | 6.7.1 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([what's new](https://www.sonarqube.org/sonarqube-6-7-lts)) | 6.0.0 | 1.3.0
+[1.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/1.0.0) | 5.6.7 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE56/Documentation)) | 0.0.3 | 1.3.0
 
 
 ## Recommendations
 [sbt-sonar](https://github.com/mwz/sbt-sonar) is an sbt plugin which provides a way to automate analysis of Scala projects with SonarQube.
+
+## Changelog
+- **2.1.0** - Published docker image with Scala plugins to dockerhub [mwizner/sonarqube-scala-plugins](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
+- **2.0.0** - SonarQube 6.7.1 LTS (sonar-scala v6.0.0, sonar-scapegoat-plugin v1.3.0).
+- **1.0.0** - SonarQube 5.6.7 LTS (sonar-scala v0.0.3, sonar-scapegoat-plugin v1.3.0).
 
 ## License
 The project is licensed under the Apache License v2. See the [LICENSE file](LICENSE) for more details.
