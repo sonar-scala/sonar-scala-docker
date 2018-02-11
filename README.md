@@ -14,6 +14,18 @@ docker-compose up -d
 
 Once docker pulls all the required images and starts up the containers, the application should become available on [http://localhost](http://localhost). The default SonarQube login details for the Administrator account are `admin:admin`.
 
+You can also use a standalone docker image which contains SonarQube LTS with bundled Scala plugins [`mwizner/sonarqube-scala-plugins:2.1.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
+
+To start the container issue the following command:
+```bash
+$ docker run -d --name sonarqube-scala-plugins-full \
+  -p 80:9000 \
+  -e SONARQUBE_JDBC_USERNAME=sonar \
+  -e SONARQUBE_JDBC_PASSWORD=sonar \
+  -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
+  mwizner/sonarqube-scala-plugins:2.1.0-full
+```
+Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production.
 
 ## Dependencies
  * [SonarQube 6.7.1 LTS](https://hub.docker.com/_/sonarqube)
@@ -24,8 +36,8 @@ Once docker pulls all the required images and starts up the containers, the appl
 
 
 ## Compatibility Matrix
-Version | SonarQube | sonar-scala | sonar-scapegoat
---------|-----------|-------------|----------------
+Version | SonarQube | sonar-scala | sonar-scala-extra
+--------|-----------|-------------|------------------
 [2.1.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.0.0), [2.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.0.0) | 6.7.1 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([what's new](https://www.sonarqube.org/sonarqube-6-7-lts)) | 6.0.0 | 1.3.0
 [1.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/1.0.0) | 5.6.7 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE56/Documentation)) | 0.0.3 | 1.3.0
 
@@ -35,8 +47,8 @@ Version | SonarQube | sonar-scala | sonar-scapegoat
 
 ## Changelog
 - **2.1.0** - Published docker image with Scala plugins to dockerhub [mwizner/sonarqube-scala-plugins](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
-- **2.0.0** - SonarQube 6.7.1 LTS (sonar-scala v6.0.0, sonar-scapegoat-plugin v1.3.0).
-- **1.0.0** - SonarQube 5.6.7 LTS (sonar-scala v0.0.3, sonar-scapegoat-plugin v1.3.0).
+- **2.0.0** - SonarQube 6.7.1 LTS.
+- **1.0.0** - SonarQube 5.6.7 LTS.
 
 ## License
 The project is licensed under the Apache License v2. See the [LICENSE file](LICENSE) for more details.
