@@ -38,7 +38,7 @@ Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQu
 ## Compatibility Matrix
 Version | SonarQube | sonar-scala | sonar-scala-extra
 --------|-----------|-------------|------------------
-[2.1.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.0.0), [2.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.0.0) | 6.7.1 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([what's new](https://www.sonarqube.org/sonarqube-6-7-lts)) | 6.0.0 | 1.3.0
+[2.1.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.1.0), [2.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.0.0) | 6.7.1 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([what's new](https://www.sonarqube.org/sonarqube-6-7-lts)) | 6.0.0 | 1.3.0
 [1.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/1.0.0) | 5.6.7 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE56/Documentation)) | 0.0.3 | 1.3.0
 
 
