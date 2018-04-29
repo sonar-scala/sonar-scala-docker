@@ -1,8 +1,8 @@
-Docker images with out-of-the-box [SonarQube LTS](https://www.sonarqube.org) instance with support for [Scala](http://www.scala-lang.org), [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage metrics) and [Scalastyle](http://www.scalastyle.org) + [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis). :sunglasses:
+Docker images with out-of-the-box [SonarQube LTS](https://www.sonarqube.org) instance with support for [Scala](http://www.scala-lang.org), [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage metrics) and [Scalastyle](http://www.scalastyle.org) + [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis).
 
 ## Available versions
 
-There are two types of images available: images with [sonar-scala](https://github.com/mwz/sonar-scala) and [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugins which can be mounted as a volume into a SonarQube container and images which bundle those plugins with SonarQube (suffixed with `-full`). 
+There are two types of images available: images with [sonar-scala](https://github.com/mwz/sonar-scala) and [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugins, which can be mounted as a volume into a SonarQube container and images which bundle those plugins with SonarQube (suffixed with `-full`). 
 
 - `2.3.0`, `latest` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.3.0/Dockerfile), [(v2.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.3.0)
 - `2.3.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.3.0-full/Dockerfile), [(v2.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.3.0)
@@ -38,8 +38,6 @@ services:
       - "80:9000"
     networks:
       - sonarnet
-    volumes:
-      - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
     volumes_from:
       - plugins
 
@@ -49,7 +47,12 @@ services:
       - sonarqube_plugins:/opt/sonarqube/extensions/plugins
     command: /bin/true
 
-  ...
+networks:
+  sonarnet:
+    driver: bridge
+
+volumes:
+  sonarqube_plugins:
 ```
 
 You can get the full recipe from [here](https://github.com/mwz/sonar-scala-docker/blob/master/docker-compose.yml).
@@ -63,6 +66,7 @@ docker run -d --name sonarqube-scala-plugins-full \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
   mwizner/sonarqube-scala-plugins:2.3.0-full
 ```
+
 Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production.
 
 ## Repository
