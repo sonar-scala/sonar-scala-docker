@@ -14,7 +14,7 @@ docker-compose up -d
 
 Once docker pulls all the required images and starts up the containers, the application should become available on [http://localhost](http://localhost). The default SonarQube login details for the Administrator account are `admin:admin`.
 
-You can also use a standalone docker image which contains SonarQube LTS with bundled Scala plugins [`mwizner/sonarqube-scala-plugins:2.3.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
+You can also use a standalone docker image which contains SonarQube LTS with bundled Scala plugins [`mwizner/sonarqube-scala-plugins:2.4.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
 
 To start the container issue the following command:
 ```bash
@@ -23,7 +23,7 @@ docker run -d --name sonarqube-scala-plugins-full \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-  mwizner/sonarqube-scala-plugins:2.3.0-full
+  mwizner/sonarqube-scala-plugins:2.4.0-full
 ```
 Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production.
 
