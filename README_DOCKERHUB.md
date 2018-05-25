@@ -4,6 +4,8 @@ Docker images with out-of-the-box [SonarQube LTS](https://www.sonarqube.org) ins
 
 There are two types of images available: images with [sonar-scala](https://github.com/mwz/sonar-scala) and [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugins, which can be mounted as a volume into a SonarQube container and images which bundle those plugins with SonarQube (suffixed with `-full`). 
 
+- `2.5.0`, `latest` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.5.0/Dockerfile), [(v2.5.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.5.0)
+- `2.5.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.5.0-full/Dockerfile), [(v2.4.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.4.0)
 - `2.4.0`, `latest` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.4.0/Dockerfile), [(v2.4.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.4.0)
 - `2.4.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.4.0-full/Dockerfile), [(v2.4.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.4.0)
 - `2.3.0`, `latest` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.3.0/Dockerfile), [(v2.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.3.0)
@@ -18,6 +20,8 @@ There are two types of images available: images with [sonar-scala](https://githu
 ## What's included
 Version | SonarQube | sonar-scala | sonar-scala-extra
 --------|-----------|-------------|------------------
+2.5.0 | | 6.4.0 | 1.3.0
+2.5.0-full | 6.7.3 LTS | 6.4.0 | 1.3.0
 2.4.0 | | 6.3.0 | 1.3.0
 2.4.0-full | 6.7.3 LTS | 6.3.0 | 1.3.0
 2.3.0 | | 6.2.0 | 1.3.0
@@ -46,7 +50,7 @@ services:
       - plugins
 
   plugins:
-    image: mwizner/sonarqube-scala-plugins:2.4.0
+    image: mwizner/sonarqube-scala-plugins:2.5.0
     volumes:
       - sonarqube_plugins:/opt/sonarqube/extensions/plugins
     command: /bin/true
@@ -68,7 +72,7 @@ docker run -d --name sonarqube-scala-plugins-full \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-  mwizner/sonarqube-scala-plugins:2.4.0-full
+  mwizner/sonarqube-scala-plugins:2.5.0-full
 ```
 
 Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production.
