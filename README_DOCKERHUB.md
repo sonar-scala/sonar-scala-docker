@@ -5,8 +5,9 @@ Docker images with out-of-the-box [SonarQube LTS](https://www.sonarqube.org) ins
 There are two types of images available: images with [sonar-scala](https://github.com/mwz/sonar-scala) and [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugins, which can be mounted as a volume into a SonarQube container and images which bundle those plugins with SonarQube (suffixed with `-full`). 
 
 - `2.6.0`, `latest` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.6.0/Dockerfile), [(v2.6.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.6.0)
+- `2.6.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.6.0-full/Dockerfile), [(v2.6.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.6.0)
 - `2.5.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.5.0/Dockerfile), [(v2.5.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.5.0)
-- `2.5.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.5.0-full/Dockerfile), [(v2.4.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.4.0)
+- `2.5.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.5.0-full/Dockerfile), [(v2.4.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.5.0)
 - `2.4.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.4.0/Dockerfile), [(v2.4.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.4.0)
 - `2.4.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.4.0-full/Dockerfile), [(v2.4.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.4.0)
 - `2.3.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.3.0/Dockerfile), [(v2.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.3.0)
@@ -19,22 +20,22 @@ There are two types of images available: images with [sonar-scala](https://githu
 - `2.1.0-full` ([Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.1.0-full/Dockerfile)), [(v2.1.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.1.0)
 
 ## What's included
-Version | SonarQube | PostgreSQL | sonar-scala | sonar-scala-extra
---------|-----------|------------|-------------|------------------
-2.6.0 | | | 6.4.0 | 1.3.0
-2.6.0-full | 6.7.4 LTS | 10.4 | 6.4.0 | 1.3.0
-2.5.0 | | | 6.4.0 | 1.3.0
-2.5.0-full | 6.7.3 LTS | 10.2 | 6.4.0 | 1.3.0
-2.4.0 | | | 6.3.0 | 1.3.0
-2.4.0-full | 6.7.3 LTS | 10.2 | 6.3.0 | 1.3.0
-2.3.0 | | | 6.2.0 | 1.3.0
-2.3.0-full | 6.7.3 LTS | 10.2 | 6.2.0 | 1.3.0
-2.2.1 | | | 6.1.0 | 1.3.0
-2.2.1-full | 6.7.3 LTS | 10.2 | 6.1.0 | 1.3.0
-2.2.0 | | | 6.1.0 | 1.3.0
-2.2.0-full | 6.7.2 LTS | 10.2 | 6.1.0 | 1.3.0
-2.1.0 | | | 6.0.0 | 1.3.0
-2.1.0-full | 6.7.1 LTS | 10.2 | 6.0.0 | 1.3.0
+Version | SonarQube | sonar-scala | sonar-scala-extra
+--------|-----------|-------------|------------------
+2.6.0 | | 6.4.0 | 1.3.0
+2.6.0-full | 6.7.4 LTS | 6.4.0 | 1.3.0
+2.5.0 | | 6.4.0 | 1.3.0
+2.5.0-full | 6.7.3 LTS | 6.4.0 | 1.3.0
+2.4.0 | | 6.3.0 | 1.3.0
+2.4.0-full | 6.7.3 LTS | 6.3.0 | 1.3.0
+2.3.0 | | 6.2.0 | 1.3.0
+2.3.0-full | 6.7.3 LTS | 6.2.0 | 1.3.0
+2.2.1 | | 6.1.0 | 1.3.0
+2.2.1-full | 6.7.3 LTS | 6.1.0 | 1.3.0
+2.2.0 | | 6.1.0 | 1.3.0
+2.2.0-full | 6.7.2 LTS | 6.1.0 | 1.3.0
+2.1.0 | | 6.0.0 | 1.3.0
+2.1.0-full | 6.7.1 LTS | 6.0.0 | 1.3.0
 
 ## Usage
 To use one of the volume images, mount it as a volume to your existing SonarQube container using e.g. `docker-compose`:
