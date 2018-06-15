@@ -14,7 +14,7 @@ docker-compose up -d
 
 Once docker pulls all the required images and starts up the containers, the application should become available on [http://localhost](http://localhost). The default SonarQube login details for the Administrator account are `admin:admin`.
 
-You can also use a standalone docker image which contains SonarQube LTS with bundled Scala plugins [`mwizner/sonarqube-scala-plugins:2.5.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
+You can also use a standalone docker image which contains SonarQube LTS with bundled Scala plugins [`mwizner/sonarqube-scala-plugins:2.6.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
 
 To start the container issue the following command:
 ```bash
@@ -23,13 +23,13 @@ docker run -d --name sonarqube-scala-plugins-full \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-  mwizner/sonarqube-scala-plugins:2.5.0-full
+  mwizner/sonarqube-scala-plugins:2.6.0-full
 ```
 Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production.
 
 ## Dependencies
  * [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube)
- * [PostgreSQL 10.2](https://hub.docker.com/_/postgres)
+ * [PostgreSQL 10](https://hub.docker.com/_/postgres)
  * External SonarQube plugins:
    * [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for scalastyle and scoverage.
    * [arthepsy/sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) - adds scapegoat inspections.
@@ -38,6 +38,7 @@ Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQu
 ## Compatibility Matrix
 Version | SonarQube | sonar-scala | sonar-scala-extra
 --------|-----------|-------------|------------------
+[2.6.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.6.0) | 6.7.4 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14377)) | [6.4.0](https://github.com/mwz/sonar-scala/releases/tag/v6.4.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
 [2.5.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.5.0) | 6.7.3 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264)) | [6.4.0](https://github.com/mwz/sonar-scala/releases/tag/v6.4.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
 [2.4.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.4.0) | 6.7.3 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264)) | [6.3.0](https://github.com/mwz/sonar-scala/releases/tag/v6.3.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
 [2.3.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.3.0) | 6.7.3 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264)) | [6.2.0](https://github.com/mwz/sonar-scala/releases/tag/v6.2.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
@@ -51,6 +52,7 @@ Version | SonarQube | sonar-scala | sonar-scala-extra
 [sbt-sonar](https://github.com/mwz/sbt-sonar) is an sbt plugin which provides a way to automate analysis of Scala projects with SonarQube.
 
 ## Changelog
+- **2.6.0** - Upgraded SonarQube to 6.7.4.
 - **2.5.0** - Upgraded sonar-scala to 6.4.0.
 - **2.4.0** - Upgraded sonar-scala to 6.3.0.
 - **2.3.0** - Upgraded sonar-scala to 6.2.0.
