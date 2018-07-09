@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu
 
-export VERSION=2.6.0
+export VERSION=2.7.0
 
 # Build
 docker build -t mwizner/sonarqube-scala-plugins:$VERSION -t mwizner/sonarqube-scala-plugins:latest $VERSION
