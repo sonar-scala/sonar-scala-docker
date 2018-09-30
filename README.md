@@ -14,7 +14,7 @@ docker-compose up -d
 
 Once docker pulls all the required images and starts up the containers, the application should become available on [http://localhost](http://localhost). The default SonarQube login details for the Administrator account are `admin:admin`.
 
-You can also use a standalone docker image which contains SonarQube LTS with bundled Scala plugins [`mwizner/sonarqube-scala-plugins:2.8.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
+You can also use a standalone docker image which contains SonarQube LTS with bundled Scala plugins [`mwizner/sonarqube-scala-plugins:2.9.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
 
 To start the container issue the following command:
 ```bash
@@ -23,7 +23,7 @@ docker run -d --name sonarqube-scala-plugins-full \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-  mwizner/sonarqube-scala-plugins:2.8.0-full
+  mwizner/sonarqube-scala-plugins:2.9.0-full
 ```
 Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production.
 
@@ -38,6 +38,7 @@ Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQu
 ## Compatibility Matrix
 Version | SonarQube | sonar-scala | sonar-scala-extra
 --------|-----------|-------------|------------------
+[2.9.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.9.0) | 6.7.5 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14467)) | [6.6.0](https://github.com/mwz/sonar-scala/releases/tag/v6.6.0) |
 [2.8.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.8.0) | 6.7.5 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14467)) | [6.5.1](https://github.com/mwz/sonar-scala/releases/tag/v6.5.1) |
 [2.7.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.7.0) | 6.7.4 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14377)) | [6.5.0](https://github.com/mwz/sonar-scala/releases/tag/v6.5.0) |
 [2.6.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.6.0) | 6.7.4 LTS ([documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14377)) | [6.4.0](https://github.com/mwz/sonar-scala/releases/tag/v6.4.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
@@ -56,6 +57,7 @@ Please note, that starting from version `2.7.0`, the images no longer contain th
 
 
 ## Changelog
+- **2.9.0** - Upgraded sonar-scala to 6.6.0.
 - **2.8.0** - Upgraded sonar-scala to 6.5.1 & SonarQube to 6.7.5.
 - **2.7.0** - Upgraded sonar-scala to 6.5.0, which brings support for scapegoat.
 - **2.6.0** - Upgraded SonarQube to 6.7.4.
