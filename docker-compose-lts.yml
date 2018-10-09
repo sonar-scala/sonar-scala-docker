@@ -2,7 +2,7 @@ version: "2"
 
 services:
   sonarqube:
-    image: mwizner/sonarqube:7.3-alpine
+    image: sonarqube:6.7.5-alpine # lts
     ports:
       - "80:9000"
     networks:
@@ -17,8 +17,6 @@ services:
       - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
     volumes_from:
       - plugins
-    depends_on:
-      - db
   db:
     image: postgres:10.5-alpine
     networks:
@@ -30,7 +28,7 @@ services:
       - postgresql:/var/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
   plugins:
-    image: mwizner/sonarqube-scala-plugins:3.0.0
+    image: mwizner/sonarqube-scala-plugins:2.9.0
     volumes:
       - sonarqube_plugins:/opt/sonarqube/extensions/plugins
     command: /bin/true
