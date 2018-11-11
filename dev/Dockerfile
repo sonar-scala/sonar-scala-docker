@@ -2,7 +2,7 @@
 # which can be mounted as a volume into a SonarQube container.
 # This image is intended to be used for local development purposes.
 
-FROM alpine:3.7
+FROM alpine:3.8
 
 ARG SONAR_SCALA_VERSION
 
