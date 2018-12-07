@@ -6,7 +6,7 @@ FROM alpine:3.8
 
 ARG SONAR_SCALA_VERSION
 
-RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/community wget ca-certificates
+RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/community wget ca-certificates
 
 WORKDIR /opt/sonarqube/extensions/plugins
 ADD sonar-scala_2.12-assembly.jar .
