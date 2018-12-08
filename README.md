@@ -1,8 +1,9 @@
 # sonar-scala-docker
-[![GitHub version](https://img.shields.io/github/tag/mwz/sonarqube-scala-docker.svg?label=release)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version](https://img.shields.io/badge/release-v3.2.1-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version lts](https://img.shields.io/badge/release_(LTS)-v2.9.0-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
-A docker-compose recipe for out-of-the-box [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and [SonarQube 7.4](https://www.sonarqube.org/sonarqube-7-4) instance with support for [Scala](http://www.scala-lang.org), [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage metrics) and [Scalastyle](http://www.scalastyle.org) + [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis). :sunglasses:
+Docker images and docker-compose recipes for out-of-the-box [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and [SonarQube 7.4](https://www.sonarqube.org/sonarqube-7-4) instance with support for [Scala](http://www.scala-lang.org), [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage metrics) and [Scalastyle](http://www.scalastyle.org) + [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis). :sunglasses:
 
 
 ## Usage
