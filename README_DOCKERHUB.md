@@ -110,7 +110,13 @@ docker run -d --name sonarqube-scala-plugins-full \
   mwizner/sonarqube-scala-plugins:3.2.1-full
 ```
 
-Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production.
+Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production, but if you don't have access to an existing database or you just want to try the image, you can use the following command:
+```bash
+docker run --rm \
+  --name sonarqube-scala-plugins-full \
+  -p 80:9000 \
+  mwizner/sonarqube-scala-plugins:3.2.1-full
+```
 
 
 ## Repository
