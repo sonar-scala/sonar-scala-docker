@@ -14,30 +14,38 @@ docker-compose up -d
 
 Once docker pulls all the required images and starts up the containers, the application should become available on [http://localhost](http://localhost). The default SonarQube login details for the Administrator account are `admin:admin`.
 
-You can also use a standalone docker image which contains SonarQube with bundled sonar-scala plugin [`mwizner/sonarqube-scala-plugins:3.2.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
+You can also use a standalone docker image which contains SonarQube with bundled sonar-scala plugin, [`mwizner/sonarqube-scala-plugins:3.2.1-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
 
 To start the container issue the following command:
 ```bash
-docker run -d --name sonarqube-scala-plugins-full \
+docker run -d \
+  --name sonarqube-scala-plugins-full \
   -p 80:9000 \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-  mwizner/sonarqube-scala-plugins:3.2.0-full
+  mwizner/sonarqube-scala-plugins:3.2.1-full
 ```
-Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production.
+Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production, but if you don't have access to an existing database or you just want to try the image, you can use the following command:
+```bash
+docker run --rm \
+  --name sonarqube-scala-plugins-full \
+  -p 80:9000 \
+  mwizner/sonarqube-scala-plugins:3.2.1-full
+```
 
 
 ## Dependencies
  * [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube) / [SonarQube 7.4](https://hub.docker.com/_/sonarqube)
  * [PostgreSQL 10](https://hub.docker.com/_/postgres)
- * [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for scalastyle, scoverage and scapegoat.
- * versions before `2.7.0` used [arthepsy/sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) for scapegoat support.
+ * [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for scalastyle, scoverage and scapegoat
+ * versions before `2.7.0` used [arthepsy/sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) for scapegoat support
 
 
 ## Compatibility Matrix
 Version | SonarQube | sonar-scala | sonar-scala-extra
 --------|-----------|-------------|------------------
+[3.2.1](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.2.1) | 7.4 ([documentation](https://docs.sonarqube.org/7.4/)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.2.0](https://github.com/mwz/sonar-scala/releases/tag/v7.2.0) |
 [3.2.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.2.0) | 7.4 ([documentation](https://docs.sonarqube.org/7.4/)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.2.0](https://github.com/mwz/sonar-scala/releases/tag/v7.2.0) |
 [3.1.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.1.0) | 7.4 ([documentation](https://docs.sonarqube.org/7.4/)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.1.0](https://github.com/mwz/sonar-scala/releases/tag/v7.1.0) |
 [3.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.0.0) | 7.3 ([documentation](https://docs.sonarqube.org/display/SONARQUBE73/Documentation)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14464)) | [7.0.0](https://github.com/mwz/sonar-scala/releases/tag/v7.0.0) |
@@ -60,6 +68,7 @@ Please note, that starting from version `2.7.0`, the images no longer contain th
 
 
 ## Changelog
+- **3.2.1** - Fixed file system permissions.
 - **3.2.0** - Upgraded sonar-scala to 7.2.0.
 - **3.1.0** - Upgraded sonar-scala to 7.1.0 & SonarQube to 7.4.
 - **3.0.0** - Upgraded sonar-scala to 7.0.0 & SonarQube to 7.3.
