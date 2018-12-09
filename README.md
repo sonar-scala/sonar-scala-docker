@@ -12,10 +12,14 @@ To start SonarQube in a daemon mode, simply run:
 ```bash
 docker-compose up -d
 ```
+or the following for the LTS version:
+```bash
+docker-compose -f docker-compose-lts.yml up -d
+```
 
 Once docker pulls all the required images and starts up the containers, the application should become available on [http://localhost](http://localhost). The default SonarQube login details for the Administrator account are `admin:admin`.
 
-You can also use a standalone docker image which contains SonarQube with bundled sonar-scala plugin, [`mwizner/sonarqube-scala-plugins:3.2.1-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
+You can also use a standalone docker image which contains SonarQube server with bundled sonar-scala plugin, [`mwizner/sonarqube-scala-plugins:3.2.1-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins) and [`mwizner/sonarqube-scala-plugins:2.10.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins) for the LTS version.
 
 To start the container issue the following command:
 ```bash

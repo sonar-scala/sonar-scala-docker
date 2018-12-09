@@ -2,7 +2,7 @@ Docker images with out-of-the-box [SonarQube 6.7 LTS](https://www.sonarqube.org/
 
 
 ## Available versions
-There are two types of images available: images with [sonar-scala](https://github.com/mwz/sonar-scala) plugin, which can be mounted as a volume into a SonarQube container and images which bundle sonar-scala plugin with SonarQube (suffixed with `-full`).
+There are two types of images available: images with [sonar-scala](https://github.com/mwz/sonar-scala) plugin, which can be mounted as a volume into a SonarQube container and images which bundle sonar-scala plugin with SonarQube server (suffixed with `-full`).
 
 Starting from version `2.7.0`, the images no longer contain the [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugin as sonar-scala provides Scapegoat support from version `6.5.0` onwards.
 
@@ -102,7 +102,7 @@ volumes:
   sonarqube_plugins:
 ```
 
-You can find the full recipe [here](https://github.com/mwz/sonar-scala-docker/blob/master/docker-compose.yml).
+You can find the full recipe [here](https://github.com/mwz/sonar-scala-docker/blob/master/docker-compose.yml) and [here](https://github.com/mwz/sonar-scala-docker/blob/master/docker-compose-lts.yml) (for the LTS version).
 
 To use the `full` image, run the following `docker` command:
 ```bash
