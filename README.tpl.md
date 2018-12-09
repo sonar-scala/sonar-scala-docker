@@ -1,6 +1,6 @@
 # sonar-scala-docker
-[![GitHub version](https://img.shields.io/badge/release-v3.2.1-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
-[![GitHub version lts](https://img.shields.io/badge/release_(LTS)-v2.10.0-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version](https://img.shields.io/badge/release-v{{version}}-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version lts](https://img.shields.io/badge/release_(LTS)-v{{ltsVersion}}-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
 Docker images and docker-compose recipes for out-of-the-box [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and [SonarQube 7.4](https://www.sonarqube.org/sonarqube-7-4) instance with support for [Scala](http://www.scala-lang.org), [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage metrics) and [Scalastyle](http://www.scalastyle.org) + [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis). :sunglasses:
@@ -15,7 +15,7 @@ docker-compose up -d
 
 Once docker pulls all the required images and starts up the containers, the application should become available on [http://localhost](http://localhost). The default SonarQube login details for the Administrator account are `admin:admin`.
 
-You can also use a standalone docker image which contains SonarQube with bundled sonar-scala plugin, [`mwizner/sonarqube-scala-plugins:3.2.1-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
+You can also use a standalone docker image which contains SonarQube with bundled sonar-scala plugin, [`mwizner/sonarqube-scala-plugins:{{version}}-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins).
 
 To start the container issue the following command:
 ```bash
@@ -25,14 +25,14 @@ docker run -d \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-  mwizner/sonarqube-scala-plugins:3.2.1-full
+  mwizner/sonarqube-scala-plugins:{{version}}-full
 ```
 Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production, but if you don't have access to an existing database or you just want to try the image, you can use the following command:
 ```bash
 docker run -d \
   --name sonarqube-scala-plugins-full \
   -p 80:9000 \
-  mwizner/sonarqube-scala-plugins:3.2.1-full
+  mwizner/sonarqube-scala-plugins:{{version}}-full
 ```
 
 

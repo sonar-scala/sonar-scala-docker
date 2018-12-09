@@ -89,7 +89,7 @@ services:
       - plugins
 
   plugins:
-    image: mwizner/sonarqube-scala-plugins:3.2.1
+    image: mwizner/sonarqube-scala-plugins:{{version}}
     volumes:
       - sonarqube_plugins:/opt/sonarqube/extensions/plugins
     command: /bin/true
@@ -112,7 +112,7 @@ docker run -d \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-  mwizner/sonarqube-scala-plugins:3.2.1-full
+  mwizner/sonarqube-scala-plugins:{{version}}-full
 ```
 
 Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production, but if you don't have access to an existing database or you just want to try the image, you can use the following command:
@@ -120,7 +120,7 @@ Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQu
 docker run -d \
   --name sonarqube-scala-plugins-full \
   -p 80:9000 \
-  mwizner/sonarqube-scala-plugins:3.2.1-full
+  mwizner/sonarqube-scala-plugins:{{version}}-full
 ```
 
 
