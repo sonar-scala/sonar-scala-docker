@@ -7,9 +7,9 @@ There are two types of images available: images with [sonar-scala](https://githu
 Starting from version `2.7.0`, the images no longer contain the [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugin as sonar-scala provides Scapegoat support from version `6.5.0` onwards.
 
 - `3.3.0`, `latest` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.3.0/Dockerfile), [(v3.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.3.0)
-- `3.3.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.3.0/Dockerfile), [(v3.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.3.0)
+- `3.3.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.3.0-full/Dockerfile), [(v3.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.3.0)
 - `3.2.1` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.1/Dockerfile), [(v3.2.1)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.1)
-- `3.2.1-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.1/Dockerfile), [(v3.2.1)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.1)
+- `3.2.1-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.1-full/Dockerfile), [(v3.2.1)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.1)
 - `3.2.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.0/Dockerfile), [(v3.2.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.0)
 - `3.2.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.0-full/Dockerfile), [(v3.2.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.0)
 - `3.1.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.1.0/Dockerfile), [(v3.1.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.1.0)
