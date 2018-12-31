@@ -21,7 +21,7 @@ Starting from version `2.7.0`, the images no longer contain the [sonar-scala-ext
 ## What's included
 Version | SonarQube | sonar-scala | sonar-scala-extra
 --------|-----------|-------------|------------------
-{{current.version}} || {{current.sonarScala}} 
+{{current.version}} || {{current.sonarScala}}
 {{current.version}}-full | {{current.sonar}} | {{current.sonarScala}}
 {{#versions.current}}
 {{version}} || {{sonarScala}}

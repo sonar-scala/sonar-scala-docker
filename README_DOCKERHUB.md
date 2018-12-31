@@ -29,7 +29,7 @@ Starting from version `2.7.0`, the images no longer contain the [sonar-scala-ext
 ## What's included
 Version | SonarQube | sonar-scala | sonar-scala-extra
 --------|-----------|-------------|------------------
-3.3.0 || 7.3.0 
+3.3.0 || 7.3.0
 3.3.0-full | 7.4 | 7.3.0
 3.2.1 || 7.2.0
 3.2.1-full | 7.4 | 7.2.0
