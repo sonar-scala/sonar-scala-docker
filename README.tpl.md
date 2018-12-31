@@ -50,6 +50,7 @@ docker run -d \
 ## Compatibility Matrix
 Version | SonarQube | sonar-scala | sonar-scala-extra
 --------|-----------|-------------|------------------
+[3.3.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.3.0) | 7.4 ([documentation](https://docs.sonarqube.org/7.4/)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.3.0](https://github.com/mwz/sonar-scala/releases/tag/v7.3.0) |
 [3.2.1](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.2.1) | 7.4 ([documentation](https://docs.sonarqube.org/7.4/)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.2.0](https://github.com/mwz/sonar-scala/releases/tag/v7.2.0) |
 [3.2.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.2.0) | 7.4 ([documentation](https://docs.sonarqube.org/7.4/)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.2.0](https://github.com/mwz/sonar-scala/releases/tag/v7.2.0) |
 [3.1.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.1.0) | 7.4 ([documentation](https://docs.sonarqube.org/7.4/)) ([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.1.0](https://github.com/mwz/sonar-scala/releases/tag/v7.1.0) |
@@ -74,6 +75,7 @@ Please note, that starting from version `2.7.0`, the images no longer contain th
 
 
 ## Changelog
+- **3.3.0** - Upgraded sonar-scala to 7.3.0.
 - **3.2.1** - Fixed file system permissions.
 - **3.2.0** - Upgraded sonar-scala to 7.2.0.
 - **3.1.0** - Upgraded sonar-scala to 7.1.0 & SonarQube to 7.4.
