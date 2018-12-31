@@ -1,5 +1,21 @@
 version: 2
 jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build
+          command: |
+            sudo apt-get install -y jq
+            export VERSION=`jq -r '.version' vars.js`
+            export VERSION_LTS=`jq -r '.ltsVersion' vars.js`
+            docker build -t mwizner/sonarqube-scala-plugins:$VERSION $VERSION
+            docker build -t mwizner/sonarqube-scala-plugins:$VERSION-full $VERSION-full
+            docker build -t mwizner/sonarqube-scala-plugins:$VERSION_LTS $VERSION_LTS
+            docker build -t mwizner/sonarqube-scala-plugins:$VERSION_LTS-full $VERSION_LTS-full
   release:
     docker:
       - image: circleci/openjdk:8-jdk
@@ -26,6 +42,12 @@ jobs:
             git push --tags
 workflows:
   version: 2
+  pr-build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: master
   release:
     jobs:
       - hold:
