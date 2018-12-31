@@ -36,7 +36,7 @@ jobs:
           command: |
             sudo apt-get install -y jq
             export VERSION=`jq -r '.version' vars.js`
-            docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
+            echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
             ./release.sh
             git tag -a $VERSION -m "Release $VERSION."
             git push --tags
