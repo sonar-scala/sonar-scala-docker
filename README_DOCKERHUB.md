@@ -6,38 +6,24 @@ There are two types of images available: images with [sonar-scala](https://githu
 
 Starting from version `2.7.0`, the images no longer contain the [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugin as sonar-scala provides Scapegoat support from version `6.5.0` onwards.
 
-- `3.3.0`, `latest` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.3.0/Dockerfile), [(v3.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.3.0)
-- `3.3.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.3.0-full/Dockerfile), [(v3.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.3.0)
-- `3.2.1` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.1/Dockerfile), [(v3.2.1)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.1)
-- `3.2.1-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.1-full/Dockerfile), [(v3.2.1)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.1)
-- `3.2.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.0/Dockerfile), [(v3.2.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.0)
-- `3.2.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.0-full/Dockerfile), [(v3.2.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.0)
-- `3.1.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.1.0/Dockerfile), [(v3.1.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.1.0)
-- `3.1.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.1.0-full/Dockerfile), [(v3.1.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.1.0)
-- `3.0.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.0.0/Dockerfile), [(v3.0.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.0.0)
-- `3.0.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.0.0-full/Dockerfile), [(v3.0.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/3.0.0)
-- `2.10.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.10.0/Dockerfile), [(v2.10.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.10.0)
-- `2.10.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.10.0-full/Dockerfile), [(v2.10.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.10.0)
-- `2.9.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.9.0/Dockerfile), [(v2.9.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.9.0)
-- `2.9.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.9.0-full/Dockerfile), [(v2.9.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.9.0)
-- `2.8.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.8.0/Dockerfile), [(v2.8.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.8.0)
-- `2.8.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.8.0-full/Dockerfile), [(v2.8.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.8.0)
-- `2.7.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.7.0/Dockerfile), [(v2.7.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.7.0)
-- `2.7.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.7.0-full/Dockerfile), [(v2.7.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.7.0)
-- `2.6.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.6.0/Dockerfile), [(v2.6.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.6.0)
-- `2.6.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.6.0-full/Dockerfile), [(v2.6.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.6.0)
-- `2.5.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.5.0/Dockerfile), [(v2.5.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.5.0)
-- `2.5.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.5.0-full/Dockerfile), [(v2.4.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.5.0)
-- `2.4.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.4.0/Dockerfile), [(v2.4.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.4.0)
-- `2.4.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.4.0-full/Dockerfile), [(v2.4.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.4.0)
-- `2.3.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.3.0/Dockerfile), [(v2.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.3.0)
-- `2.3.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.3.0-full/Dockerfile), [(v2.3.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.3.0)
-- `2.2.1` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.2.1/Dockerfile), [(v2.2.1)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.2.1)
-- `2.2.1-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.2.1-full/Dockerfile), [(v2.2.1)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.2.1)
-- `2.2.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.2.0/Dockerfile), [(v2.2.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.2.0)
-- `2.2.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.2.0-full/Dockerfile), [(v2.2.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.2.0)
-- `2.1.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.1.0/Dockerfile), [(v2.1.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.1.0)
-- `2.1.0-full` ([Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.1.0-full/Dockerfile)), [(v2.1.0)](https://github.com/mwz/sonar-scala-docker/releases/tag/2.1.0)
+#### Current
+- `3.3.0` (latest) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.3.0/Dockerfile), `3.3.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.3.0-full/Dockerfile), [Release 3.3.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.3.0)
+- `2.10.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.10.0/Dockerfile), `2.10.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.10.0-full/Dockerfile), [Release 2.10.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.10.0)
+#### Older
+- `3.2.1` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.1/Dockerfile), `3.2.1-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.1-full/Dockerfile), [Release 3.2.1](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.1)
+- `3.2.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.0/Dockerfile), `3.2.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.0-full/Dockerfile), [Release 3.2.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.0)
+- `3.1.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.1.0/Dockerfile), `3.1.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.1.0-full/Dockerfile), [Release 3.1.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.1.0)
+- `3.0.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.0.0/Dockerfile), `3.0.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.0.0-full/Dockerfile), [Release 3.0.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.0.0)
+- `2.9.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.9.0/Dockerfile), `2.9.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.9.0-full/Dockerfile), [Release 2.9.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.9.0)
+- `2.8.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.8.0/Dockerfile), `2.8.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.8.0-full/Dockerfile), [Release 2.8.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.8.0)
+- `2.7.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.7.0/Dockerfile), `2.7.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.7.0-full/Dockerfile), [Release 2.7.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.7.0)
+- `2.6.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.6.0/Dockerfile), `2.6.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.6.0-full/Dockerfile), [Release 2.6.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.6.0)
+- `2.5.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.5.0/Dockerfile), `2.5.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.5.0-full/Dockerfile), [Release 2.5.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.5.0)
+- `2.4.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.4.0/Dockerfile), `2.4.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.4.0-full/Dockerfile), [Release 2.4.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.4.0)
+- `2.3.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.3.0/Dockerfile), `2.3.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.3.0-full/Dockerfile), [Release 2.3.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.3.0)
+- `2.2.1` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.2.1/Dockerfile), `2.2.1-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.2.1-full/Dockerfile), [Release 2.2.1](https://github.com/mwz/sonar-scala-docker/releases/tag/2.2.1)
+- `2.2.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.2.0/Dockerfile), `2.2.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.2.0-full/Dockerfile), [Release 2.2.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.2.0)
+- `2.1.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.1.0/Dockerfile), `2.1.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.1.0-full/Dockerfile), [Release 2.1.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.1.0)
 
 
 ## What's included
@@ -53,14 +39,14 @@ Version | SonarQube | sonar-scala | sonar-scala-extra
 3.1.0-full | 7.4 | 7.1.0
 3.0.0 || 7.0.0
 3.0.0-full | 7.3 | 7.0.0
-2.10.0 || 6.7.0
-2.10.0-full | 6.7.6 LTS | 6.7.0
-2.9.0 || 6.6.0
-2.9.0-full | 6.7.5 LTS | 6.6.0
-2.8.0 || 6.5.1
-2.8.0-full | 6.7.5 LTS | 6.5.1
-2.7.0 || 6.5.0
-2.7.0-full | 6.7.4 LTS | 6.5.0
+2.10.0 || 6.7.0 | 
+2.10.0-full | 6.7.6 LTS | 6.7.0 | 
+2.9.0 || 6.6.0 | 
+2.9.0-full | 6.7.5 LTS | 6.6.0 | 
+2.8.0 || 6.5.1 | 
+2.8.0-full | 6.7.5 LTS | 6.5.1 | 
+2.7.0 || 6.5.0 | 
+2.7.0-full | 6.7.4 LTS | 6.5.0 | 
 2.6.0 || 6.4.0 | 1.3.0
 2.6.0-full | 6.7.4 LTS | 6.4.0 | 1.3.0
 2.5.0 || 6.4.0 | 1.3.0
