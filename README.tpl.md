@@ -56,7 +56,7 @@ Version | SonarQube | sonar-scala | sonar-scala-extra
 {{/versions.current}}
 [{{lts.version}}](https://github.com/mwz/sonarqube-scala-docker/releases/tag/{{lts.version}}) | {{lts.sonar}} ([documentation]({{{lts.sonarDocs}}}))([changelog]({{{lts.sonarChangelog}}})) | [{{lts.sonarScala}}](https://github.com/mwz/sonar-scala/releases/tag/v{{lts.sonarScala}})
 {{#versions.lts}}
-[{{version}}](https://github.com/mwz/sonarqube-scala-docker/releases/tag/{{version}}) | {{sonar}} ([documentation]({{{sonarDocs}}}))([changelog]({{{sonarChangelog}}})) | [{{sonarScala}}](https://github.com/mwz/sonar-scala/releases/tag/v{{{sonarScala}}}) | {{#sonarScalaExtra}}[{{sonarScalaExtra}}](https://github.com/arthepsy/sonar-scala-extra/releases){{/sonarScalaExtra}}
+[{{version}}](https://github.com/mwz/sonarqube-scala-docker/releases/tag/{{version}}) | {{sonar}} ([documentation]({{{sonarDocs}}}))([changelog]({{{sonarChangelog}}})) | [{{sonarScala}}](https://github.com/mwz/sonar-scala/releases/tag/v{{{sonarScala}}}) | {{#sonarScalaExtra}}[{{sonarScalaExtra}}](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v{{sonarScalaExtra}}){{/sonarScalaExtra}}
 {{/versions.lts}}
 
 
