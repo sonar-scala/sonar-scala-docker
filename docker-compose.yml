@@ -31,7 +31,7 @@ services:
       - postgresql:/var/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
   plugins:
-    image: mwizner/sonarqube-scala-plugins:3.3.0
+    image: mwizner/sonarqube-scala-plugins:3.4.0
     volumes:
       - sonarqube_plugins:/opt/sonarqube/extensions/plugins
     command: /bin/true

@@ -67,6 +67,7 @@ Please note, that starting from version `2.7.0`, the images no longer contain th
 
 
 ## Changelog
+- **3.4.0** - Upgraded sonar-scala to 7.3.1.
 - **3.3.0** - Upgraded sonar-scala to 7.3.0.
 - **3.2.1** - Fixed file system permissions.
 - **3.2.0** - Upgraded sonar-scala to 7.2.0.

@@ -1,5 +1,5 @@
 # sonar-scala-docker
-[![GitHub version](https://img.shields.io/badge/release-v3.3.0-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version](https://img.shields.io/badge/release-v3.4.0-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![GitHub version lts](https://img.shields.io/badge/release_(LTS)-v2.10.0-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
@@ -19,7 +19,7 @@ docker-compose -f docker-compose-lts.yml up -d
 
 Once docker pulls all the required images and starts up the containers, the application should become available on [http://localhost](http://localhost). The default SonarQube login details for the Administrator account are `admin:admin`.
 
-You can also use a standalone docker image which contains SonarQube server with bundled sonar-scala plugin, [`mwizner/sonarqube-scala-plugins:3.3.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins) and [`mwizner/sonarqube-scala-plugins:2.10.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins) for the LTS version.
+You can also use a standalone docker image which contains SonarQube server with bundled sonar-scala plugin, [`mwizner/sonarqube-scala-plugins:3.4.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins) and [`mwizner/sonarqube-scala-plugins:2.10.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins) for the LTS version.
 
 To start the container issue the following command:
 ```bash
@@ -29,14 +29,14 @@ docker run -d \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-  mwizner/sonarqube-scala-plugins:3.3.0-full
+  mwizner/sonarqube-scala-plugins:3.4.0-full
 ```
 Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable, SonarQube will use an embedded H2 database, which is not recommended in production, but if you don't have access to an existing database or you just want to try the image, you can use the following command:
 ```bash
 docker run -d \
   --name sonarqube-scala-plugins-full \
   -p 80:9000 \
-  mwizner/sonarqube-scala-plugins:3.3.0-full
+  mwizner/sonarqube-scala-plugins:3.4.0-full
 ```
 
 
@@ -50,6 +50,7 @@ docker run -d \
 ## Compatibility Matrix
 Version | SonarQube | sonar-scala | sonar-scala-extra
 --------|-----------|-------------|------------------
+[3.4.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.4.0) | 7.4 ([documentation](https://docs.sonarqube.org/7.4))([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.3.1](https://github.com/mwz/sonar-scala/releases/tag/v7.3.1)
 [3.3.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.3.0) | 7.4 ([documentation](https://docs.sonarqube.org/7.4))([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.3.0](https://github.com/mwz/sonar-scala/releases/tag/v7.3.0)
 [3.2.1](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.2.1) | 7.4 ([documentation](https://docs.sonarqube.org/7.4))([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.2.0](https://github.com/mwz/sonar-scala/releases/tag/v7.2.0)
 [3.2.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.2.0) | 7.4 ([documentation](https://docs.sonarqube.org/7.4))([changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549)) | [7.2.0](https://github.com/mwz/sonar-scala/releases/tag/v7.2.0)
@@ -75,6 +76,7 @@ Please note, that starting from version `2.7.0`, the images no longer contain th
 
 
 ## Changelog
+- **3.4.0** - Upgraded sonar-scala to 7.3.1.
 - **3.3.0** - Upgraded sonar-scala to 7.3.0.
 - **3.2.1** - Fixed file system permissions.
 - **3.2.0** - Upgraded sonar-scala to 7.2.0.
