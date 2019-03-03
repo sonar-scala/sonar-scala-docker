@@ -40,6 +40,30 @@ jobs:
             ./release.sh
             git tag -a $VERSION -m "Release $VERSION."
             git push --tags
+  release-lts:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "31:63:53:c4:af:b7:2c:a1:62:8e:b0:11:83:f8:62:eb"
+      - run:
+          name: Set up git
+          command: |
+            git config --global user.name "CircleCI"
+            git config --global user.email "mwz@users.noreply.github.com"
+            ssh-keyscan -T 15 github.com >> ~/.ssh/known_hosts
+      - setup_remote_docker
+      - run:
+          name: Release LTS
+          command: |
+            sudo apt-get install -y jq
+            export VERSION=`jq -r '.lts.version' vars.js`
+            echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+            ./release-lts.sh
+            git tag -a $VERSION -m "Release $VERSION."
+            git push --tags
 workflows:
   version: 2
   pr-build:
@@ -55,9 +79,20 @@ workflows:
           filters:
             branches:
               only: master
+      - hold-lts:
+          type: approval
+          filters:
+            branches:
+              only: master
       - release:
           requires:
             - hold
+          filters:
+            branches:
+              only: master
+      - release-lts:
+          requires:
+            - hold-lts
           filters:
             branches:
               only: master

@@ -73,6 +73,7 @@ Please note, that starting from version `2.7.0`, the images no longer contain th
 - **3.2.0** - Upgraded sonar-scala to 7.2.0.
 - **3.1.0** - Upgraded sonar-scala to 7.1.0 & SonarQube to 7.4.
 - **3.0.0** - Upgraded sonar-scala to 7.0.0 & SonarQube to 7.3.
+- **2.11.0** - Upgraded sonar-scala to 6.8.0.
 - **2.10.0** - Upgraded sonar-scala to 6.7.0 & SonarQube to 6.7.6.
 - **2.9.0** - Upgraded sonar-scala to 6.6.0.
 - **2.8.0** - Upgraded sonar-scala to 6.5.1 & SonarQube to 6.7.5.
