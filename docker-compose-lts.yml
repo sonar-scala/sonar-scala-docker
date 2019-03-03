@@ -1,48 +1,48 @@
 version: "2"
 
 services:
-  sonarqube:
+  sonarqube-lts:
     image: sonarqube:6.7.6-community # lts
     ports:
       - "80:9000"
     networks:
-      - sonarnet
+      - sonarnet_lts
     environment:
       - SONARQUBE_JDBC_USERNAME=sonar
       - SONARQUBE_JDBC_PASSWORD=sonar
-      - SONARQUBE_JDBC_URL=jdbc:postgresql://db:5432/sonar
+      - SONARQUBE_JDBC_URL=jdbc:postgresql://db-lts:5432/sonar
     volumes:
       - ./conf/sonar-lts.properties:/opt/sonarqube/conf/sonar.properties
       - ./logs:/opt/sonarqube/logs
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+      - sonarqube_lts_data:/opt/sonarqube/data
+      - sonarqube_lts_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
     volumes_from:
-      - plugins
+      - plugins-lts
     depends_on:
-      - db
-  db:
+      - db-lts
+  db-lts:
     image: postgres:10.6-alpine
     networks:
-      - sonarnet
+      - sonarnet_lts
     environment:
       - POSTGRES_USER=sonar
       - POSTGRES_PASSWORD=sonar
     volumes:
-      - postgresql:/var/lib/postgresql
-      - postgresql_data:/var/lib/postgresql/data
-  plugins:
-    image: mwizner/sonarqube-scala-plugins:2.10.0
+      - postgresql_lts:/var/lib/postgresql
+      - postgresql_lts_data:/var/lib/postgresql/data
+  plugins-lts:
+    image: mwizner/sonarqube-scala-plugins:2.11.0
     volumes:
-      - sonarqube_plugins:/opt/sonarqube/extensions/plugins
+      - sonarqube_lts_plugins:/opt/sonarqube/extensions/plugins
     command: /bin/true
 
 networks:
-  sonarnet:
+  sonarnet_lts:
     driver: bridge
 
 volumes:
-  sonarqube_data:
-  sonarqube_bundled-plugins:
-  sonarqube_plugins:
-  postgresql:
-  postgresql_data:
+  sonarqube_lts_data:
+  sonarqube_lts_bundled-plugins:
+  sonarqube_lts_plugins:
+  postgresql_lts:
+  postgresql_lts_data:
