@@ -1,4 +1,4 @@
-Docker images with out-of-the-box [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and [SonarQube 7.6](https://www.sonarqube.org/sonarqube-7-6) instance with support for [Scala](http://www.scala-lang.org), [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage metrics) and [Scalastyle](http://www.scalastyle.org) + [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis).
+Docker images with out-of-the-box [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and [SonarQube 7.7](https://www.sonarqube.org/sonarqube-7-7) instance with support for [Scala](http://www.scala-lang.org), [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage metrics) and [Scalastyle](http://www.scalastyle.org) + [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis).
 
 
 ## Available versions
