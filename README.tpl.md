@@ -3,7 +3,7 @@
 [![GitHub version lts](https://img.shields.io/badge/release_(LTS)-v{{lts.version}}-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
-Docker images and docker-compose recipes for out-of-the-box [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and [SonarQube 7.6](https://www.sonarqube.org/sonarqube-7-6) instance with support for [Scala](http://www.scala-lang.org), [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage metrics) and [Scalastyle](http://www.scalastyle.org) + [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis). :sunglasses:
+Docker images and docker-compose recipes for out-of-the-box [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and [SonarQube 7.7](https://www.sonarqube.org/sonarqube-7-7) instance with support for [Scala](http://www.scala-lang.org), [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage metrics) and [Scalastyle](http://www.scalastyle.org) + [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis). :sunglasses:
 
 
 ## Usage
@@ -41,7 +41,7 @@ docker run -d \
 
 
 ## Dependencies
- * [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube) / [SonarQube 7.4](https://hub.docker.com/_/sonarqube)
+ * [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube) / [SonarQube 7.7](https://hub.docker.com/_/sonarqube)
  * [PostgreSQL 10](https://hub.docker.com/_/postgres)
  * [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for scalastyle, scoverage and scapegoat
  * versions before `2.7.0` used [arthepsy/sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) for scapegoat support
@@ -67,6 +67,7 @@ Please note, that starting from version `2.7.0`, the images no longer contain th
 
 
 ## Changelog
+- **3.6.0** - Upgraded sonar-scala to 7.5.0 & SonarQube to 7.7.
 - **3.5.0** - Upgraded sonar-scala to 7.4.0 & SonarQube to 7.6.
 - **3.4.0** - Upgraded sonar-scala to 7.3.1.
 - **3.3.0** - Upgraded sonar-scala to 7.3.0.
