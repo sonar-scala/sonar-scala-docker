@@ -42,7 +42,7 @@ version: "2"
 
 services:
   sonarqube:
-    image: sonarqube:7.4-community
+    image: sonarqube:7.7-community
     ports:
       - "80:9000"
     networks:

@@ -8,7 +8,7 @@ Starting from version `2.7.0`, the images no longer contain the [sonar-scala-ext
 
 #### Current
 - `3.6.0` (latest) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.6.0/Dockerfile), `3.6.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.6.0-full/Dockerfile), [Release 3.6.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.6.0)
-- `2.11.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.11.0/Dockerfile), `2.11.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.11.0-full/Dockerfile), [Release 2.11.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.11.0)
+- `2.12.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.12.0/Dockerfile), `2.12.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.12.0-full/Dockerfile), [Release 2.12.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.12.0)
 #### Older
 - `3.5.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.5.0/Dockerfile), `3.5.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.5.0-full/Dockerfile), [Release 3.5.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.5.0)
 - `3.4.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.4.0/Dockerfile), `3.4.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.4.0-full/Dockerfile), [Release 3.4.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.4.0)
@@ -17,6 +17,7 @@ Starting from version `2.7.0`, the images no longer contain the [sonar-scala-ext
 - `3.2.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.0/Dockerfile), `3.2.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.2.0-full/Dockerfile), [Release 3.2.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.2.0)
 - `3.1.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.1.0/Dockerfile), `3.1.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.1.0-full/Dockerfile), [Release 3.1.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.1.0)
 - `3.0.0` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.0.0/Dockerfile), `3.0.0-full` [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.0.0-full/Dockerfile), [Release 3.0.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.0.0)
+- `2.11.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.11.0/Dockerfile), `2.11.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.11.0-full/Dockerfile), [Release 2.11.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.11.0)
 - `2.10.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.10.0/Dockerfile), `2.10.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.10.0-full/Dockerfile), [Release 2.10.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.10.0)
 - `2.9.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.9.0/Dockerfile), `2.9.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.9.0-full/Dockerfile), [Release 2.9.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.9.0)
 - `2.8.0` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.8.0/Dockerfile), `2.8.0-full` (LTS) [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.8.0-full/Dockerfile), [Release 2.8.0](https://github.com/mwz/sonar-scala-docker/releases/tag/2.8.0)
@@ -49,6 +50,8 @@ Version | SonarQube | sonar-scala | sonar-scala-extra
 3.1.0-full | 7.4 | 7.1.0
 3.0.0 || 7.0.0
 3.0.0-full | 7.3 | 7.0.0
+2.12.0 || 6.8.0 | 
+2.12.0-full | 6.7.7 LTS | 6.8.0 | 
 2.11.0 || 6.8.0 | 
 2.11.0-full | 6.7.6 LTS | 6.8.0 | 
 2.10.0 || 6.7.0 | 
@@ -82,7 +85,7 @@ version: "2"
 
 services:
   sonarqube:
-    image: sonarqube:7.4-community
+    image: sonarqube:7.7-community
     ports:
       - "80:9000"
     networks:
