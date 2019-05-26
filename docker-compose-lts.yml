@@ -2,7 +2,7 @@ version: "2"
 
 services:
   sonarqube-lts:
-    image: sonarqube:6.7.6-community # lts
+    image: sonarqube:6.7.7-community # lts
     ports:
       - "80:9000"
     networks:
@@ -21,7 +21,7 @@ services:
     depends_on:
       - db-lts
   db-lts:
-    image: postgres:10.6-alpine
+    image: postgres:10.8-alpine
     networks:
       - sonarnet_lts
     environment:
@@ -31,7 +31,7 @@ services:
       - postgresql_lts:/var/lib/postgresql
       - postgresql_lts_data:/var/lib/postgresql/data
   plugins-lts:
-    image: mwizner/sonarqube-scala-plugins:2.11.0
+    image: mwizner/sonarqube-scala-plugins:2.12.0
     volumes:
       - sonarqube_lts_plugins:/opt/sonarqube/extensions/plugins
     command: /bin/true
