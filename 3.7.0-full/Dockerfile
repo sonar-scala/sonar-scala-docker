@@ -5,7 +5,7 @@ FROM sonarqube:7.8-community
 ENV SONAR_SCALA_VERSION 7.6.0
 
 WORKDIR /opt/sonarqube/extensions/plugins
-RUN wget -O "sonar-scala-plugin-${SONAR_SCALA_VERSION}.jar" \
+RUN rm sonar-scala-plugin-* && wget -O "sonar-scala-plugin-${SONAR_SCALA_VERSION}.jar" \
   "https://dl.bintray.com/mwz/maven/com/github/mwz/sonar-scala_2.12/${SONAR_SCALA_VERSION}/sonar-scala_2.12-${SONAR_SCALA_VERSION}-assembly.jar"
 
 WORKDIR $SONARQUBE_HOME
