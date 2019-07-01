@@ -10,8 +10,8 @@ jobs:
           name: Build
           command: |
             sudo apt-get install -y jq
-            export VERSION=`jq -r '.current.version' vars.js`
-            export VERSION_LTS=`jq -r '.lts.version' vars.js`
+            export VERSION=`jq -r '.current.version' vars.json`
+            export VERSION_LTS=`jq -r '.lts.version' vars.json`
             docker build -t mwizner/sonarqube-scala-plugins:$VERSION $VERSION
             docker build -t mwizner/sonarqube-scala-plugins:$VERSION-full $VERSION-full
             docker build -t mwizner/sonarqube-scala-plugins:$VERSION_LTS $VERSION_LTS
@@ -35,7 +35,7 @@ jobs:
           name: Release
           command: |
             sudo apt-get install -y jq
-            export VERSION=`jq -r '.current.version' vars.js`
+            export VERSION=`jq -r '.current.version' vars.json`
             echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
             ./release.sh
             git tag -a $VERSION -m "Release $VERSION."
@@ -59,7 +59,7 @@ jobs:
           name: Release LTS
           command: |
             sudo apt-get install -y jq
-            export VERSION=`jq -r '.lts.version' vars.js`
+            export VERSION=`jq -r '.lts.version' vars.json`
             echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
             ./release-lts.sh
             git tag -a $VERSION -m "Release $VERSION."
