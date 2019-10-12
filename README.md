@@ -1,13 +1,14 @@
 # sonar-scala-docker
 
 [![GitHub version](https://img.shields.io/badge/release-v3.7.0-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
-[![GitHub version lts](<https://img.shields.io/badge/release_(LTS)-v2.12.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version lts](<https://img.shields.io/badge/release_(LTS_7.9)-v4.0.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version lts 6.7](<https://img.shields.io/badge/release_(LTS_6.7)-v2.12.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
 Docker images and docker-compose recipes for out-of-the-box
 [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and
-[SonarQube 7.8](https://www.sonarqube.org/sonarqube-7-8) instance with support
-for [Scala](http://www.scala-lang.org),
+[SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) instance with
+support for [Scala](http://www.scala-lang.org),
 [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage
 metrics) and [Scalastyle](http://www.scalastyle.org) +
 [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis).
@@ -35,10 +36,14 @@ You can also use a standalone docker image which contains SonarQube server with
 bundled sonar-scala plugin,
 [`mwizner/sonarqube-scala-plugins:3.7.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 and
+[`mwizner/sonarqube-scala-plugins:4.0.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
+for the current LTS version. Alternatively, we also provide an image for the old
+6.7 LTS version -
 [`mwizner/sonarqube-scala-plugins:2.12.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
-for the LTS version.
 
-To start the container issue the following command:
+To start the container issue the following command:  
+_See the version compatibility matrix [below](#compatibility-matrix) to
+determine which version you should use._
 
 ```bash
 docker run -d \
@@ -65,13 +70,14 @@ docker run -d \
 ## Dependencies
 
 - [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube) /
-  [SonarQube 7.8](https://hub.docker.com/_/sonarqube)
+  [SonarQube 7.9 LTS](https://hub.docker.com/_/sonarqube)
 - [PostgreSQL 10](https://hub.docker.com/_/postgres)
 - [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for
   scalastyle, scoverage and scapegoat
-- versions before `2.7.0` used
-  [arthepsy/sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra)
-  for scapegoat support
+
+(versions before `2.7.0` used
+[arthepsy/sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) for
+scapegoat support)
 
 ## Compatibility Matrix
 
@@ -79,28 +85,148 @@ docker run -d \
 |Version | SonarQube | sonar-scala | sonar-scala-extra|
 |--------|-----------|-------------|------------------|
 [3.7.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.7.0) | 7.8 [documentation](https://docs.sonarqube.org/7.8), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14939) | [7.6.0](https://github.com/mwz/sonar-scala/releases/tag/v7.6.0)
-[3.6.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.6.0) | 7.7 [documentation](https://docs.sonarqube.org/7.7), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14848) | [7.5.0](https://github.com/mwz/sonar-scala/releases/tag/v7.5.0)
-[3.5.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.5.0) | 7.6 [documentation](https://docs.sonarqube.org/7.6), [changelog](https://jira.sonarsource.com/secure/ReleaseNote.jspa?version=14753&projectId=10930) | [7.4.0](https://github.com/mwz/sonar-scala/releases/tag/v7.4.0)
-[3.4.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.4.0) | 7.4 [documentation](https://docs.sonarqube.org/7.4), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549) | [7.3.1](https://github.com/mwz/sonar-scala/releases/tag/v7.3.1)
-[3.3.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.3.0) | 7.4 [documentation](https://docs.sonarqube.org/7.4), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549) | [7.3.0](https://github.com/mwz/sonar-scala/releases/tag/v7.3.0)
-[3.2.1](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.2.1) | 7.4 [documentation](https://docs.sonarqube.org/7.4), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549) | [7.2.0](https://github.com/mwz/sonar-scala/releases/tag/v7.2.0)
-[3.2.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.2.0) | 7.4 [documentation](https://docs.sonarqube.org/7.4), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549) | [7.2.0](https://github.com/mwz/sonar-scala/releases/tag/v7.2.0)
-[3.1.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.1.0) | 7.4 [documentation](https://docs.sonarqube.org/7.4), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549) | [7.1.0](https://github.com/mwz/sonar-scala/releases/tag/v7.1.0)
-[3.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.0.0) | 7.3 [documentation](https://docs.sonarqube.org/display/SONARQUBE73/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14464) | [7.0.0](https://github.com/mwz/sonar-scala/releases/tag/v7.0.0)
+[4.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/4.0.0) | 7.9.1 LTS [documentation](https://docs.sonarqube.org/7.9), [changelog](https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=15029) | [7.7.0](https://github.com/mwz/sonar-scala/releases/tag/v7.7.0)
 [2.12.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.12.0) | 6.7.7 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14865) | [6.8.0](https://github.com/mwz/sonar-scala/releases/tag/v6.8.0)
-[2.11.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.11.0) | 6.7.6 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=13972) | [6.8.0](https://github.com/mwz/sonar-scala/releases/tag/v6.8.0) | 
-[2.10.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.10.0) | 6.7.6 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=13972) | [6.7.0](https://github.com/mwz/sonar-scala/releases/tag/v6.7.0) | 
-[2.9.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.9.0) | 6.7.5 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14467) | [6.6.0](https://github.com/mwz/sonar-scala/releases/tag/v6.6.0) | 
-[2.8.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.8.0) | 6.7.5 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14467) | [6.5.1](https://github.com/mwz/sonar-scala/releases/tag/v6.5.1) | 
-[2.7.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.7.0) | 6.7.4 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14377) | [6.5.0](https://github.com/mwz/sonar-scala/releases/tag/v6.5.0) | 
-[2.6.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.6.0) | 6.7.4 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14377) | [6.4.0](https://github.com/mwz/sonar-scala/releases/tag/v6.4.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
-[2.5.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.5.0) | 6.7.3 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264) | [6.4.0](https://github.com/mwz/sonar-scala/releases/tag/v6.4.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
-[2.4.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.4.0) | 6.7.3 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264) | [6.3.0](https://github.com/mwz/sonar-scala/releases/tag/v6.3.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
-[2.3.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.3.0) | 6.7.3 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264) | [6.2.0](https://github.com/mwz/sonar-scala/releases/tag/v6.2.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
-[2.2.1](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.2.1) | 6.7.3 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264) | [6.1.0](https://github.com/mwz/sonar-scala/releases/tag/v6.1.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
-[2.2.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.2.0) | 6.7.2 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14191) | [6.1.0](https://github.com/mwz/sonar-scala/releases/tag/v6.1.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
-[2.1.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.1.0) | 6.7.1 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14137) | [6.0.0](https://github.com/mwz/sonar-scala/releases/tag/v6.0.0) | [1.3.0](https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0)
 <!-- prettier-ignore-end -->
+
+<details>
+  <summary>Other versions</summary>
+  <table>
+    <tr>
+        <td><b>Version</b></td>
+        <td><b>SonarQube</b></td>
+        <td><b>sonar-scala</b></td>
+        <td><b>sonar-scala-extra</b></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.6.0">3.6.0</a></td>
+        <td>7.7 <a href="https://docs.sonarqube.org/7.7">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14848">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v7.5.0">7.5.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.5.0">3.5.0</a></td>
+        <td>7.6 <a href="https://docs.sonarqube.org/7.6">documentation</a>, <a href="https://jira.sonarsource.com/secure/ReleaseNote.jspa?version=14753&projectId=10930">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v7.4.0">7.4.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.4.0">3.4.0</a></td>
+        <td>7.4 <a href="https://docs.sonarqube.org/7.4">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v7.3.1">7.3.1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.3.0">3.3.0</a></td>
+        <td>7.4 <a href="https://docs.sonarqube.org/7.4">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v7.3.0">7.3.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.2.1">3.2.1</a></td>
+        <td>7.4 <a href="https://docs.sonarqube.org/7.4">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v7.2.0">7.2.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.2.0">3.2.0</a></td>
+        <td>7.4 <a href="https://docs.sonarqube.org/7.4">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v7.2.0">7.2.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.1.0">3.1.0</a></td>
+        <td>7.4 <a href="https://docs.sonarqube.org/7.4">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14549">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v7.1.0">7.1.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.0.0">3.0.0</a></td>
+        <td>7.3 <a href="https://docs.sonarqube.org/display/SONARQUBE73/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14464">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v7.0.0">7.0.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.12.0">2.12.0</a></td>
+        <td>6.7.7 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14865">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.8.0">6.8.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.11.0">2.11.0</a></td>
+        <td>6.7.6 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=13972">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.8.0">6.8.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.10.0">2.10.0</a></td>
+        <td>6.7.6 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=13972">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.7.0">6.7.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.9.0">2.9.0</a></td>
+        <td>6.7.5 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14467">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.6.0">6.6.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.8.0">2.8.0</a></td>
+        <td>6.7.5 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14467">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.5.1">6.5.1</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.7.0">2.7.0</a></td>
+        <td>6.7.4 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14377">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.5.0">6.5.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.6.0">2.6.0</a></td>
+        <td>6.7.4 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14377">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.4.0">6.4.0</td>
+        <td><a href="https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0">1.3.0</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.5.0">2.5.0</a></td>
+        <td>6.7.3 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.4.0">6.4.0</td>
+        <td><a href="https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0">1.3.0</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.4.0">2.4.0</a></td>
+        <td>6.7.3 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.3.0">6.3.0</td>
+        <td><a href="https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0">1.3.0</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.3.0">2.3.0</a></td>
+        <td>6.7.3 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.2.0">6.2.0</td>
+        <td><a href="https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0">1.3.0</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.2.1">2.2.1</a></td>
+        <td>6.7.3 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14264">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.1.0">6.1.0</td>
+        <td><a href="https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0">1.3.0</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.2.0">2.2.0</a></td>
+        <td>6.7.2 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14191">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.1.0">6.1.0</td>
+        <td><a href="https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0">1.3.0</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.1.0">2.1.0</a></td>
+        <td>6.7.1 LTS <a href="https://docs.sonarqube.org/display/SONARQUBE67/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14137">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v6.0.0">6.0.0</td>
+        <td><a href="https://github.com/arthepsy/sonar-scala-extra/releases/tag/v1.3.0">1.3.0</a></td>
+    </tr>
+  </table>
+</details>
+<br>
 
 Please note, that starting from version `2.7.0`, the images no longer contain
 the [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugin as
@@ -116,6 +242,7 @@ way to automate analysis of Scala projects with SonarQube.
 <details>
   <summary>Expand to see the changelog.</summary>
   <ul>
+    <li><strong>4.0.0</strong> - Upgraded sonar-scala to 7.7.0 & SonarQube to 7.9.1 LTS.</li>
     <li><strong>3.7.0</strong> - Upgraded sonar-scala to 7.6.0 & SonarQube to 7.8.</li>
     <li><strong>3.6.0</strong> - Upgraded sonar-scala to 7.5.0 & SonarQube to 7.7.</li>
     <li><strong>3.5.0</strong> - Upgraded sonar-scala to 7.4.0 & SonarQube to 7.6.</li>

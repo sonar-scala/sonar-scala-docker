@@ -12,10 +12,10 @@ jobs:
             sudo apt-get install -y jq
             export VERSION=`jq -r '.current.version' vars.json`
             export VERSION_LTS=`jq -r '.lts.version' vars.json`
-            docker build -t mwizner/sonarqube-scala-plugins:$VERSION $VERSION
-            docker build -t mwizner/sonarqube-scala-plugins:$VERSION-full $VERSION-full
-            docker build -t mwizner/sonarqube-scala-plugins:$VERSION_LTS $VERSION_LTS
-            docker build -t mwizner/sonarqube-scala-plugins:$VERSION_LTS-full $VERSION_LTS-full
+            docker build -t mwizner/sonarqube-scala-plugins:$VERSION current
+            docker build -t mwizner/sonarqube-scala-plugins:$VERSION-full current/full
+            docker build -t mwizner/sonarqube-scala-plugins:$VERSION_LTS lts
+            docker build -t mwizner/sonarqube-scala-plugins:$VERSION_LTS-full lts/full
   release:
     docker:
       - image: circleci/openjdk:8-jdk
