@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Build
           command: |
-            sudo apt-get install -y jq
+            sudo apt-get update && sudo apt-get install -y jq
             export VERSION=`jq -r '.current.version' vars.json`
             export VERSION_LTS=`jq -r '.lts.version' vars.json`
             docker build -t mwizner/sonarqube-scala-plugins:$VERSION current
