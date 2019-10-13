@@ -34,7 +34,7 @@ jobs:
       - run:
           name: Release
           command: |
-            sudo apt-get install -y jq
+            sudo apt-get update && sudo apt-get install -y jq
             export VERSION=`jq -r '.current.version' vars.json`
             echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
             ./release.sh
@@ -58,12 +58,38 @@ jobs:
       - run:
           name: Release LTS
           command: |
-            sudo apt-get install -y jq
+            sudo apt-get update && sudo apt-get install -y jq
             export VERSION=`jq -r '.lts.version' vars.json`
             echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
             ./release-lts.sh
             git tag -a $VERSION -m "Release $VERSION."
             git push --tags
+  update-dockerhub-readme:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run:
+          name: Update Dockerhub readme
+          command: |
+            sudo apt-get update && sudo apt-get install -y jq
+            LOGIN_BODY="{\"username\": \"${DOCKER_USER}\", \"password\": \"${DOCKER_PASS}\"}"
+            TOKEN=$(curl -s \
+              -H "Content-Type: application/json" \
+              -X POST \
+              -d ${LOGIN_BODY} \
+              https://hub.docker.com/v2/users/login | jq -r .token)
+            RESPONSE_CODE=$(curl -s \
+              --write-out "%{response_code}" \
+              --output /dev/null \
+              -H "Authorization: JWT ${TOKEN}" \
+              -X PATCH --data-urlencode full_description@README_DOCKERHUB.md \
+              https://cloud.docker.com/v2/repositories/mwizner/sonarqube-scala-plugins)
+            if [[ $RESPONSE_CODE == "200" ]]; then
+              exit 0
+            else
+              exit 1
+            fi
 workflows:
   version: 2
   pr-build:
@@ -79,20 +105,32 @@ workflows:
           filters:
             branches:
               only: master
-      - hold-lts:
-          type: approval
-          filters:
-            branches:
-              only: master
       - release:
           requires:
             - hold
           filters:
             branches:
               only: master
+      - update-dockerhub-readme:
+          requires:
+            - release
+          filters:
+            branches:
+              only: master
+      - hold-lts:
+          type: approval
+          filters:
+            branches:
+              only: master
       - release-lts:
           requires:
             - hold-lts
+          filters:
+            branches:
+              only: master
+      - update-dockerhub-readme-lts:
+          requires:
+            - release-lts
           filters:
             branches:
               only: master
