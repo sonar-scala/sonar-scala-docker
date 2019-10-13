@@ -2,8 +2,8 @@
 set -eu
 
 # Build
-docker build -t mwizner/sonarqube-scala-plugins:$VERSION -t mwizner/sonarqube-scala-plugins:latest $VERSION
-docker build -t mwizner/sonarqube-scala-plugins:$VERSION-full $VERSION-full
+docker build -t mwizner/sonarqube-scala-plugins:$VERSION -t mwizner/sonarqube-scala-plugins:latest current
+docker build -t mwizner/sonarqube-scala-plugins:$VERSION-full current/full
 
 # Push
 docker push mwizner/sonarqube-scala-plugins:$VERSION

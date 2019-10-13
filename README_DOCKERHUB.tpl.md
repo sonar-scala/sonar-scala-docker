@@ -1,7 +1,7 @@
 Docker images with out-of-the-box
 [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and
-[SonarQube 7.8](https://www.sonarqube.org/sonarqube-7-8) instance with support
-for [Scala](http://www.scala-lang.org),
+[SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) instance with
+support for [Scala](http://www.scala-lang.org),
 [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage
 metrics) and [Scalastyle](http://www.scalastyle.org) +
 [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis).
@@ -17,53 +17,36 @@ Starting from version `2.7.0`, the images no longer contain the
 [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugin as
 sonar-scala provides Scapegoat support from version `6.5.0` onwards.
 
-#### Current
-
 - `{{current.version}}` (latest)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{current.version}}/Dockerfile),
   `{{current.version}}-full`
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{current.version}}-full/Dockerfile),
   [Release {{current.version}}](https://github.com/mwz/sonar-scala-docker/releases/tag/{{current.version}})
-- `{{lts.version}}` (LTS)
+- `{{lts.version}}` (7.9 LTS)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts.version}}/Dockerfile),
-  `{{lts.version}}-full` (LTS)
+  `{{lts.version}}-full` (7.9 LTS)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts.version}}-full/Dockerfile),
   [Release {{lts.version}}](https://github.com/mwz/sonar-scala-docker/releases/tag/{{lts.version}})
+- `{{lts67.version}}` (6.7 LTS)
+  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts67.version}}/Dockerfile),
+  `{{lts67.version}}-full` (6.7 LTS)
+  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts67.version}}-full/Dockerfile),
+  [Release {{lts67.version}}](https://github.com/mwz/sonar-scala-docker/releases/tag/{{lts67.version}})
 
-#### Older
-
-{{#versions.current}}
-
-- `{{version}}`
-  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{version}}/Dockerfile),
-  `{{version}}-full`
-  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{version}}-full/Dockerfile),
-  [Release {{version}}](https://github.com/mwz/sonar-scala-docker/releases/tag/{{version}})
-  {{/versions.current}} {{#versions.lts}}
-- `{{version}}` (LTS)
-  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{version}}/Dockerfile),
-  `{{version}}-full` (LTS)
-  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{version}}-full/Dockerfile),
-  [Release {{version}}](https://github.com/mwz/sonar-scala-docker/releases/tag/{{version}})
-  {{/versions.lts}}
+For older versions please check the
+[releases](https://github.com/mwz/sonar-scala-docker/releases) page on Github.
 
 ## What's included
 
 <!-- prettier-ignore-start -->
-Version | SonarQube | sonar-scala | sonar-scala-extra
---------|-----------|-------------|------------------
-{{current.version}} || {{current.sonarScala}}
-{{current.version}}-full | {{current.sonar}} | {{current.sonarScala}}
-{{#versions.current}}
-{{version}} || {{sonarScala}}
-{{version}}-full | {{sonar}} | {{sonarScala}}
-{{/versions.current}}
-{{lts.version}} || {{lts.sonarScala}} | {{sonarScalaExtra}}
-{{lts.version}}-full | {{lts.sonar}} | {{lts.sonarScala}} | {{sonarScalaExtra}}
-{{#versions.lts}}
-{{version}} || {{sonarScala}} | {{sonarScalaExtra}}
-{{version}}-full | {{sonar}} | {{sonarScala}} | {{sonarScalaExtra}}
-{{/versions.lts}}
+Version | SonarQube | sonar-scala |
+--------|-----------|-------------|
+{{current.version}} || {{current.sonarScala}} |
+{{current.version}}-full | {{current.sonar}} | {{current.sonarScala}} |
+{{lts.version}} || {{lts.sonarScala}} |
+{{lts.version}}-full | {{lts.sonar}} | {{lts.sonarScala}} |
+{{lts67.version}} || {{lts67.sonarScala}} |
+{{lts67.version}}-full | {{lts67.sonar}} | {{lts67.sonarScala}} |
 <!-- prettier-ignore-end -->
 
 ## Usage
