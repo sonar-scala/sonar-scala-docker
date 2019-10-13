@@ -84,7 +84,7 @@ jobs:
               --output /dev/null \
               -H "Authorization: JWT ${TOKEN}" \
               -X PATCH --data-urlencode full_description@README_DOCKERHUB.md \
-              https://cloud.docker.com/v2/repositories/mwizner/sonarqube-scala-plugins)
+              https://cloud.docker.com/v2/repositories/mwizner/sonarqube-scala-plugins/)
             echo $RESPONSE_CODE
             if [[ $RESPONSE_CODE == "200" ]]; then
               exit 0
