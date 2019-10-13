@@ -94,7 +94,11 @@ workflows:
   version: 2
   pr-build:
     jobs:
-      - build:
+      # - build:
+      #     filters:
+      #       branches:
+      #         ignore: master
+      - update-dockerhub-readme:
           filters:
             branches:
               ignore: master
@@ -128,7 +132,7 @@ workflows:
           filters:
             branches:
               only: master
-      - update-dockerhub-readme-lts:
+      - update-dockerhub-readme:
           requires:
             - release-lts
           filters:
