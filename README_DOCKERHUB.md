@@ -1,10 +1,10 @@
 Docker images with out-of-the-box
 [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and
 [SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) instance with
-support for [Scala](http://www.scala-lang.org),
-[Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage
-metrics) and [Scalastyle](http://www.scalastyle.org) +
-[Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis).
+support for **[Scala](http://www.scala-lang.org)**,
+**[Scoverage](https://github.com/scoverage/scalac-scoverage-plugin)** (code
+coverage metrics) and **[Scalastyle](http://www.scalastyle.org)** +
+**[Scapegoat](https://github.com/sksamuel/scapegoat)** (static code analysis).
 
 ## Available versions
 
@@ -22,11 +22,11 @@ sonar-scala provides Scapegoat support from version `6.5.0` onwards.
   `3.7.0-full`
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.7.0-full/Dockerfile),
   [Release 3.7.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.7.0)
-- `4.0.0` (7.9 LTS)
-  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/4.0.0/Dockerfile),
-  `4.0.0-full` (7.9 LTS)
-  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/4.0.0-full/Dockerfile),
-  [Release 4.0.0](https://github.com/mwz/sonar-scala-docker/releases/tag/4.0.0)
+- `4.1.0` (7.9 LTS)
+  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/4.1.0/Dockerfile),
+  `4.1.0-full` (7.9 LTS)
+  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/4.1.0-full/Dockerfile),
+  [Release 4.1.0](https://github.com/mwz/sonar-scala-docker/releases/tag/4.1.0)
 - `2.12.0` (6.7 LTS)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/2.12.0/Dockerfile),
   `2.12.0-full` (6.7 LTS)
@@ -43,8 +43,8 @@ Version | SonarQube | sonar-scala |
 --------|-----------|-------------|
 3.7.0 || 7.6.0 |
 3.7.0-full | 7.8 | 7.6.0 |
-4.0.0 || 7.7.0 |
-4.0.0-full | 7.9.1 LTS | 7.7.0 |
+4.1.0 || 7.8.0 |
+4.1.0-full | 7.9.1 LTS | 7.8.0 |
 2.12.0 || 6.8.0 |
 2.12.0-full | 6.7.7 LTS | 6.8.0 |
 <!-- prettier-ignore-end -->

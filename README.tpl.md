@@ -1,8 +1,8 @@
 # sonar-scala-docker
 
 [![GitHub version](https://img.shields.io/badge/release-v{{current.version}}-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
-[![GitHub version lts](<https://img.shields.io/badge/release_(LTS_7.9)-v{{lts.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
-[![GitHub version lts 6.7](<https://img.shields.io/badge/release_(LTS_6.7)-v{{lts67.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version lts](<https://img.shields.io/badge/release_(for_SonarQube_LTS_7.9)-v{{lts.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version lts 6.7](<https://img.shields.io/badge/release_(for_SonarQube_LTS_6.7)-v{{lts67.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
 Docker images and docker-compose recipes for out-of-the-box
@@ -132,6 +132,7 @@ way to automate analysis of Scala projects with SonarQube.
 <details>
   <summary>Expand to see the changelog.</summary>
   <ul>
+    <li><strong>4.1.0</strong> - Upgraded sonar-scala to 7.8.0.</li>
     <li><strong>4.0.0</strong> - Upgraded sonar-scala to 7.7.0 & SonarQube to 7.9.1 LTS.</li>
     <li><strong>3.7.0</strong> - Upgraded sonar-scala to 7.6.0 & SonarQube to 7.8.</li>
     <li><strong>3.6.0</strong> - Upgraded sonar-scala to 7.5.0 & SonarQube to 7.7.</li>
