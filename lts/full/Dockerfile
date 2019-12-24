@@ -2,7 +2,7 @@
 
 FROM sonarqube:7.9.1-community
 
-ENV SONAR_SCALA_VERSION 7.7.0
+ENV SONAR_SCALA_VERSION 7.8.0
 
 WORKDIR /opt/sonarqube/extensions/plugins
 RUN rm sonar-scala-plugin-* && curl -L -o "sonar-scala-plugin-${SONAR_SCALA_VERSION}.jar" \
