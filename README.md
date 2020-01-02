@@ -34,11 +34,12 @@ default SonarQube login details for the Administrator account are `admin:admin`.
 
 You can also use a standalone docker image which contains SonarQube server with
 bundled sonar-scala plugin,
-[`mwizner/sonarqube-scala-plugins:3.7.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
-and
+[`mwizner/sonarqube-scala-plugins:3.7.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)(or
+`mwizner/sonarqube-scala-plugins:latest-full`) and
 [`mwizner/sonarqube-scala-plugins:4.1.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
-for the current LTS version. Alternatively, we also provide an image for the old
-6.7 LTS version -
+(or `mwizner/sonarqube-scala-plugins:latest-lts-full`) for the current LTS
+version. Alternatively, we also provide an image for the old SonarQube 6.7 LTS
+version -
 [`mwizner/sonarqube-scala-plugins:2.12.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
 To start the container issue the following command:  
@@ -75,15 +76,15 @@ docker run -d \
 - [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for
   scalastyle, scoverage and scapegoat
 
-(versions before `2.7.0` used
+_(versions before `2.7.0` used
 [arthepsy/sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) for
-scapegoat support)
+scapegoat support)_
 
 ## Compatibility Matrix
 
 <!-- prettier-ignore-start -->
-|Version | SonarQube | sonar-scala | sonar-scala-extra|
-|--------|-----------|-------------|------------------|
+|Version | SonarQube | sonar-scala |
+|--------|-----------|-------------|
 [3.7.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.7.0) | 7.8 [documentation](https://docs.sonarqube.org/7.8), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14939) | [7.6.0](https://github.com/mwz/sonar-scala/releases/tag/v7.6.0)
 [4.1.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/4.1.0) | 7.9.1 LTS [documentation](https://docs.sonarqube.org/7.9), [changelog](https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=15029) | [7.8.0](https://github.com/mwz/sonar-scala/releases/tag/v7.8.0)
 [2.12.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.12.0) | 6.7.7 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14865) | [6.8.0](https://github.com/mwz/sonar-scala/releases/tag/v6.8.0)
@@ -234,9 +235,9 @@ scapegoat support)
 </details>
 <br>
 
-Please note, that starting from version `2.7.0`, the images no longer contain
+_Please note, that starting from version `2.7.0`, the images no longer contain
 the [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugin as
-sonar-scala provides Scapegoat support from version `6.5.0` onwards.
+sonar-scala provides Scapegoat support from version `6.5.0` onwards._
 
 ## Recommendations
 

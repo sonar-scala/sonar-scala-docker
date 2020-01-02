@@ -17,14 +17,14 @@ Starting from version `2.7.0`, the images no longer contain the
 [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugin as
 sonar-scala provides Scapegoat support from version `6.5.0` onwards.
 
-- `{{current.version}}` (latest)
+- `{{current.version}}`, `latest`
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{current.version}}/Dockerfile),
-  `{{current.version}}-full`
+  `{{current.version}}-full`, `latest-full`
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{current.version}}-full/Dockerfile),
   [Release {{current.version}}](https://github.com/mwz/sonar-scala-docker/releases/tag/{{current.version}})
-- `{{lts.version}}` (7.9 LTS)
+- `{{lts.version}}`, `latest-lts` (7.9 LTS)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts.version}}/Dockerfile),
-  `{{lts.version}}-full` (7.9 LTS)
+  `{{lts.version}}-full`, `latest-lts-full` (7.9 LTS)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts.version}}-full/Dockerfile),
   [Release {{lts.version}}](https://github.com/mwz/sonar-scala-docker/releases/tag/{{lts.version}})
 - `{{lts67.version}}` (6.7 LTS)
