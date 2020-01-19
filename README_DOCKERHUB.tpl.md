@@ -38,16 +38,14 @@ For older versions please check the
 
 ## What's included
 
-<!-- prettier-ignore-start -->
-Version | SonarQube | sonar-scala |
---------|-----------|-------------|
-{{current.version}} || {{current.sonarScala}} |
-{{current.version}}-full | {{current.sonar}} | {{current.sonarScala}} |
-{{lts.version}} || {{lts.sonarScala}} |
-{{lts.version}}-full | {{lts.sonar}} | {{lts.sonarScala}} |
-{{lts67.version}} || {{lts67.sonarScala}} |
-{{lts67.version}}-full | {{lts67.sonar}} | {{lts67.sonarScala}} |
-<!-- prettier-ignore-end -->
+| Version                  | SonarQube         | sonar-scala            |
+| ------------------------ | ----------------- | ---------------------- |
+| {{current.version}}      |                   | {{current.sonarScala}} |
+| {{current.version}}-full | {{current.sonar}} | {{current.sonarScala}} |
+| {{lts.version}}          |                   | {{lts.sonarScala}}     |
+| {{lts.version}}-full     | {{lts.sonar}}     | {{lts.sonarScala}}     |
+| {{lts67.version}}        |                   | {{lts67.sonarScala}}   |
+| {{lts67.version}}-full   | {{lts67.sonar}}   | {{lts67.sonarScala}}   |
 
 ## Usage
 
