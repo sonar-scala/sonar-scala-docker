@@ -1,7 +1,7 @@
 # sonar-scala-docker
 
 [![GitHub version](https://img.shields.io/badge/release-v3.7.0-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
-[![GitHub version lts](<https://img.shields.io/badge/release_(for_SonarQube_LTS_7.9)-v4.1.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version lts](<https://img.shields.io/badge/release_(for_SonarQube_LTS_7.9)-v4.2.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![GitHub version lts 6.7](<https://img.shields.io/badge/release_(for_SonarQube_LTS_6.7)-v2.12.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
@@ -36,7 +36,7 @@ You can also use a standalone docker image which contains SonarQube server with
 bundled sonar-scala plugin,
 [`mwizner/sonarqube-scala-plugins:3.7.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)(or
 `mwizner/sonarqube-scala-plugins:latest-full`) and
-[`mwizner/sonarqube-scala-plugins:4.1.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
+[`mwizner/sonarqube-scala-plugins:4.2.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 (or `mwizner/sonarqube-scala-plugins:latest-lts-full`) for the current LTS
 version. Alternatively, we also provide an image for the old SonarQube 6.7 LTS
 version -
@@ -86,7 +86,7 @@ scapegoat support)_
 |Version | SonarQube | sonar-scala |
 |--------|-----------|-------------|
 [3.7.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.7.0) | 7.8 [documentation](https://docs.sonarqube.org/7.8), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14939) | [7.6.0](https://github.com/mwz/sonar-scala/releases/tag/v7.6.0)
-[4.1.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/4.1.0) | 7.9.1 LTS [documentation](https://docs.sonarqube.org/7.9), [changelog](https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=15029) | [7.8.0](https://github.com/mwz/sonar-scala/releases/tag/v7.8.0)
+[4.2.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/4.2.0) | 7.9.1 LTS [documentation](https://docs.sonarqube.org/7.9), [changelog](https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=15029) | [7.9.0](https://github.com/mwz/sonar-scala/releases/tag/v7.9.0)
 [2.12.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.12.0) | 6.7.7 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14865) | [6.8.0](https://github.com/mwz/sonar-scala/releases/tag/v6.8.0)
 <!-- prettier-ignore-end -->
 
@@ -145,6 +145,12 @@ scapegoat support)_
         <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/3.0.0">3.0.0</a></td>
         <td>7.3 <a href="https://docs.sonarqube.org/display/SONARQUBE73/Documentation">documentation</a>, <a href="https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14464">changelog</a></td>
         <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v7.0.0">7.0.0</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/4.1.0">4.1.0</a></td>
+        <td>7.9.1 LTS <a href="https://docs.sonarqube.org/7.9">documentation</a>, <a href="https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=15029">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v7.8.0">7.8.0</td>
         <td></td>
     </tr>
     <tr>
@@ -249,6 +255,7 @@ way to automate analysis of Scala projects with SonarQube.
 <details>
   <summary>Expand to see the changelog.</summary>
   <ul>
+    <li><strong>4.2.0</strong> - Upgraded sonar-scala to 7.9.0.</li>
     <li><strong>4.1.0</strong> - Upgraded sonar-scala to 7.8.0.</li>
     <li><strong>4.0.0</strong> - Upgraded sonar-scala to 7.7.0 & SonarQube to 7.9.1 LTS.</li>
     <li><strong>3.7.0</strong> - Upgraded sonar-scala to 7.6.0 & SonarQube to 7.8.</li>
