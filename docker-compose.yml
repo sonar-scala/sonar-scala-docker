@@ -2,7 +2,7 @@ version: "2"
 
 services:
   sonarqube:
-    image: sonarqube:7.8-community
+    image: sonarqube:8.1-community-beta
     ports:
       - "80:9000"
     networks:
@@ -21,7 +21,7 @@ services:
     depends_on:
       - db
   db:
-    image: postgres:10.9-alpine
+    image: postgres:10.11-alpine
     networks:
       - sonarnet
     environment:
@@ -31,7 +31,7 @@ services:
       - postgresql:/var/lib/postgresql
       - postgresql_data:/var/lib/postgresql/data
   plugins:
-    image: mwizner/sonarqube-scala-plugins:3.7.0
+    image: mwizner/sonarqube-scala-plugins:5.0.0
     volumes:
       - sonarqube_plugins:/opt/sonarqube/extensions/plugins
     command: /bin/true

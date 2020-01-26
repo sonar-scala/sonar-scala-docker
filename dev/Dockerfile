@@ -7,5 +7,5 @@ FROM bitnami/minideb:stretch
 ARG SONAR_SCALA_VERSION
 
 RUN groupadd -r sonarqube && useradd -r -g sonarqube sonarqube
-ADD --chown=sonarqube:sonarqube sonar-scala_2.12-assembly.jar /opt/sonarqube/extensions/plugins/sonar-scala_2.12-assembly.jar
+ADD --chown=sonarqube:sonarqube sonar-scala_2.13-assembly.jar /opt/sonarqube/extensions/plugins/sonar-scala_2.13-assembly.jar
 WORKDIR /opt/sonarqube/extensions/plugins
