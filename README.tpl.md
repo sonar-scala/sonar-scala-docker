@@ -6,9 +6,10 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
 Docker images and docker-compose recipes for out-of-the-box
-[SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and
-[SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) instance with
-support for [Scala](http://www.scala-lang.org),
+[SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts),
+[SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) and
+[SonarQube 8.1](https://www.sonarqube.org/sonarqube-8-1) instance with support
+for [Scala](http://www.scala-lang.org),
 [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage
 metrics) and [Scalastyle](http://www.scalastyle.org) +
 [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis).
@@ -71,7 +72,8 @@ docker run -d \
 ## Dependencies
 
 - [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube) /
-  [SonarQube 7.9 LTS](https://hub.docker.com/_/sonarqube)
+  [SonarQube 7.9 LTS](https://hub.docker.com/_/sonarqube) /
+  [SonarQube 8.1 LTS](https://hub.docker.com/_/sonarqube)
 - [PostgreSQL 10](https://hub.docker.com/_/postgres)
 - [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for
   scalastyle, scoverage and scapegoat
@@ -133,6 +135,7 @@ way to automate analysis of Scala projects with SonarQube.
 <details>
   <summary>Expand to see the changelog.</summary>
   <ul>
+    <li><strong>5.0.0</strong> - Upgraded sonar-scala to 8.0.0 & SonarQube to 8.1.</li>
     <li><strong>4.2.0</strong> - Upgraded sonar-scala to 7.9.0.</li>
     <li><strong>4.1.0</strong> - Upgraded sonar-scala to 7.8.0.</li>
     <li><strong>4.0.0</strong> - Upgraded sonar-scala to 7.7.0 & SonarQube to 7.9.1 LTS.</li>

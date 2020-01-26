@@ -2,3 +2,4 @@ logs/
 .idea
 *.jar
 *.orig
+.metals

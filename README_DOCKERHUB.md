@@ -1,7 +1,8 @@
 Docker images with out-of-the-box
-[SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) and
-[SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) instance with
-support for **[Scala](http://www.scala-lang.org)**,
+[SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts),
+[SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) and
+[SonarQube 8.1](https://www.sonarqube.org/sonarqube-8-1) instance with support
+for **[Scala](http://www.scala-lang.org)**,
 **[Scoverage](https://github.com/scoverage/scalac-scoverage-plugin)** (code
 coverage metrics) and **[Scalastyle](http://www.scalastyle.org)** +
 **[Scapegoat](https://github.com/sksamuel/scapegoat)** (static code analysis).
@@ -17,11 +18,11 @@ Starting from version `2.7.0`, the images no longer contain the
 [sonar-scala-extra](https://github.com/arthepsy/sonar-scala-extra) plugin as
 sonar-scala provides Scapegoat support from version `6.5.0` onwards.
 
-- `3.7.0`, `latest`
-  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.7.0/Dockerfile),
-  `3.7.0-full`, `latest-full`
-  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/3.7.0-full/Dockerfile),
-  [Release 3.7.0](https://github.com/mwz/sonar-scala-docker/releases/tag/3.7.0)
+- `5.0.0`, `latest`
+  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/5.0.0/Dockerfile),
+  `5.0.0-full`, `latest-full`
+  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/5.0.0-full/Dockerfile),
+  [Release 5.0.0](https://github.com/mwz/sonar-scala-docker/releases/tag/5.0.0)
 - `4.2.0`, `latest-lts` (7.9 LTS)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/4.2.0/Dockerfile),
   `4.2.0-full`, `latest-lts-full` (7.9 LTS)
@@ -40,8 +41,8 @@ For older versions please check the
 
 | Version                  | SonarQube         | sonar-scala            |
 | ------------------------ | ----------------- | ---------------------- |
-| 3.7.0      |                   | 7.6.0 |
-| 3.7.0-full | 7.8 | 7.6.0 |
+| 5.0.0      |                   | 8.0.0 |
+| 5.0.0-full | 8.1 | 8.0.0 |
 | 4.2.0          |                   | 7.9.0     |
 | 4.2.0-full     | 7.9.1 LTS     | 7.9.0     |
 | 2.12.0        |                   | 6.8.0   |
@@ -57,7 +58,7 @@ version: "2"
 
 services:
   sonarqube:
-    image: sonarqube:7.8-community
+    image: sonarqube:8.1-community-beta
     ports:
       - "80:9000"
     networks:
@@ -66,7 +67,7 @@ services:
       - plugins
 
   plugins:
-    image: mwizner/sonarqube-scala-plugins:3.7.0
+    image: mwizner/sonarqube-scala-plugins:5.0.0
     volumes:
       - sonarqube_plugins:/opt/sonarqube/extensions/plugins
     command: /bin/true
@@ -94,7 +95,7 @@ docker run -d \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-  mwizner/sonarqube-scala-plugins:3.7.0-full
+  mwizner/sonarqube-scala-plugins:5.0.0-full
 ```
 
 Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable,
@@ -106,7 +107,7 @@ want to try the image, you can use the following command:
 docker run -d \
   --name sonarqube-scala-plugins-full \
   -p 80:9000 \
-  mwizner/sonarqube-scala-plugins:3.7.0-full
+  mwizner/sonarqube-scala-plugins:5.0.0-full
 ```
 
 ## Repository

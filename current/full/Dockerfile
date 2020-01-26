@@ -1,12 +1,12 @@
-# SonarQube 7.8 image with bundled sonar-scala 7.6.0 (https://github.com/mwz/sonar-scala).
+# SonarQube 8.1 image with bundled sonar-scala 8.0.0 (https://github.com/mwz/sonar-scala).
 
-FROM sonarqube:7.8-community
+FROM sonarqube:8.1-community-beta
 
-ENV SONAR_SCALA_VERSION 7.6.0
+ENV SONAR_SCALA_VERSION 8.0.0
 
 WORKDIR /opt/sonarqube/extensions/plugins
-RUN rm sonar-scala-plugin-* && wget -O "sonar-scala-plugin-${SONAR_SCALA_VERSION}.jar" \
-  "https://dl.bintray.com/mwz/maven/com/github/mwz/sonar-scala_2.12/${SONAR_SCALA_VERSION}/sonar-scala_2.12-${SONAR_SCALA_VERSION}-assembly.jar"
+RUN rm sonar-scala-plugin-* && curl -L -o "sonar-scala-plugin-${SONAR_SCALA_VERSION}.jar" \
+  "https://dl.bintray.com/mwz/maven/com/github/mwz/sonar-scala_2.13/${SONAR_SCALA_VERSION}/sonar-scala_2.13-${SONAR_SCALA_VERSION}-assembly.jar"
 
 WORKDIR $SONARQUBE_HOME
 ENTRYPOINT ["./bin/run.sh"]
