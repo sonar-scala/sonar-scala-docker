@@ -1,4 +1,4 @@
-# SonarQube 7.8 image with bundled sonar-scala 8.0.0 (https://github.com/mwz/sonar-scala).
+# SonarQube 8.1 image with bundled sonar-scala 8.0.0 (https://github.com/mwz/sonar-scala).
 
 FROM sonarqube:8.1-community-beta
 
