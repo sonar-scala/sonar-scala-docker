@@ -1,10 +1,10 @@
-# Minideb image with bundled sonar-scala 8.0.0 (https://github.com/mwz/sonar-scala),
+# Minideb image with bundled sonar-scala (https://github.com/mwz/sonar-scala),
 # which can be mounted as a volume into a SonarQube container.
 
 FROM bitnami/minideb:stretch
 RUN install_packages curl ca-certificates
 
-ENV SONAR_SCALA_VERSION 8.0.0
+ENV SONAR_SCALA_VERSION 8.1.0
 
 RUN groupadd -r sonarqube && useradd -r -g sonarqube sonarqube
 WORKDIR /opt/sonarqube/extensions/plugins
