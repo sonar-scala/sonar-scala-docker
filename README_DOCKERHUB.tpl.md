@@ -114,3 +114,6 @@ docker run -d \
 
 This project is open-sourced and can be found on
 [Github](https://github.com/mwz/sonar-scala-docker).
+
+sonar-scala documentation can be found on
+[sonar-scala.com](https://sonar-scala.com).
