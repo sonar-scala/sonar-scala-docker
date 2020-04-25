@@ -1,8 +1,8 @@
-# SonarQube 8.1 image with bundled sonar-scala (https://github.com/mwz/sonar-scala).
+# SonarQube 8.2 image with bundled sonar-scala (https://github.com/mwz/sonar-scala).
 
-FROM sonarqube:8.1-community-beta
+FROM sonarqube:8.2-community
 
-ENV SONAR_SCALA_VERSION 8.1.0
+ENV SONAR_SCALA_VERSION 8.2.0
 
 WORKDIR /opt/sonarqube/extensions/plugins
 RUN rm sonar-scala-plugin-* && curl -L -o "sonar-scala-plugin-${SONAR_SCALA_VERSION}.jar" \
