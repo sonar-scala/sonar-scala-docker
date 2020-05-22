@@ -1,6 +1,6 @@
 # sonar-scala-docker
 
-[![GitHub version](https://img.shields.io/badge/release-v{{current.version}}-blue.svg)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version](<https://img.shields.io/badge/release_(for_SonarQube_{{current.sonar}})-v{{current.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![GitHub version lts](<https://img.shields.io/badge/release_(for_SonarQube_LTS_7.9)-v{{lts.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![GitHub version lts 6.7](<https://img.shields.io/badge/release_(for_SonarQube_LTS_6.7)-v{{lts67.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
@@ -8,7 +8,7 @@
 Docker images and docker-compose recipes for out-of-the-box
 [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts),
 [SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) and
-[SonarQube 8.1](https://www.sonarqube.org/sonarqube-8-1) instance with support
+[SonarQube {{current.sonar}}](https://www.sonarqube.org) instance with support
 for [Scala](http://www.scala-lang.org),
 [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage
 metrics) and [Scalastyle](http://www.scalastyle.org) +
@@ -73,8 +73,8 @@ docker run -d \
 
 - [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube) /
   [SonarQube 7.9 LTS](https://hub.docker.com/_/sonarqube) /
-  [SonarQube 8.1 LTS](https://hub.docker.com/_/sonarqube)
-- [PostgreSQL 10](https://hub.docker.com/_/postgres)
+  [SonarQube {{current.sonar}}](https://hub.docker.com/_/sonarqube)
+- [PostgreSQL 11](https://hub.docker.com/_/postgres)
 - [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for
   scalastyle, scoverage and scapegoat
 
@@ -135,6 +135,7 @@ way to automate analysis of Scala projects with SonarQube.
 <details>
   <summary>Expand to see the changelog.</summary>
   <ul>
+    <li><strong>5.2.0</strong> - Upgraded sonar-scala to 8.2.0 & SonarQube to 8.2.</li>
     <li><strong>5.1.0</strong> - Upgraded sonar-scala to 8.1.0.</li>
     <li><strong>5.0.0</strong> - Upgraded sonar-scala to 8.0.0 & SonarQube to 8.1.</li>
     <li><strong>4.2.0</strong> - Upgraded sonar-scala to 7.9.0.</li>

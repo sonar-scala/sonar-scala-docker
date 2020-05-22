@@ -1,7 +1,7 @@
 Docker images with out-of-the-box
 [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts),
 [SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) and
-[SonarQube 8.1](https://www.sonarqube.org/sonarqube-8-1) instance with support
+[SonarQube {{current.sonar}}](https://www.sonarqube.org) instance with support
 for **[Scala](http://www.scala-lang.org)**,
 **[Scoverage](https://github.com/scoverage/scalac-scoverage-plugin)** (code
 coverage metrics) and **[Scalastyle](http://www.scalastyle.org)** +
@@ -58,7 +58,7 @@ version: "2"
 
 services:
   sonarqube:
-    image: sonarqube:{{current.sonar}}-community-beta
+    image: sonarqube:{{current.sonar}}-community
     ports:
       - "80:9000"
     networks:
