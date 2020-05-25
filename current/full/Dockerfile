@@ -4,9 +4,11 @@ FROM sonarqube:8.3.1-community
 
 ENV SONAR_SCALA_VERSION 8.3.0
 
-WORKDIR /opt/sonarqube/extensions/plugins
-RUN rm sonar-scala-plugin-* && wget -o "sonar-scala-plugin-${SONAR_SCALA_VERSION}.jar" \
-  "https://dl.bintray.com/mwz/maven/com/github/mwz/sonar-scala_2.13/${SONAR_SCALA_VERSION}/sonar-scala_2.13-${SONAR_SCALA_VERSION}-assembly.jar"
+RUN rm $SQ_EXTENSIONS_DIR/plugins/sonar-scala-plugin-* && \
+  wget -O "${SQ_EXTENSIONS_DIR}/plugins/sonar-scala-plugin-${SONAR_SCALA_VERSION}.jar" \
+  "https://dl.bintray.com/mwz/maven/com/github/mwz/sonar-scala_2.13/${SONAR_SCALA_VERSION}/sonar-scala_2.13-${SONAR_SCALA_VERSION}-assembly.jar" && \
+  chown sonarqube:sonarqube $SQ_EXTENSIONS_DIR/plugins/sonar-scala-plugin-* && \
+  chmod 777 $SQ_EXTENSIONS_DIR/plugins/sonar-scala-plugin-*
 
 WORKDIR $SONARQUBE_HOME
 ENTRYPOINT ["./bin/run.sh"]
