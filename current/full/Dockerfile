@@ -2,7 +2,7 @@
 
 FROM sonarqube:8.3.1-community
 
-ENV SONAR_SCALA_VERSION 8.3.0
+ENV SONAR_SCALA_VERSION 8.4.0
 
 RUN rm $SQ_EXTENSIONS_DIR/plugins/sonar-scala-plugin-* && \
   wget -O "${SQ_EXTENSIONS_DIR}/plugins/sonar-scala-plugin-${SONAR_SCALA_VERSION}.jar" \
