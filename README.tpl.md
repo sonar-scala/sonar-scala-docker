@@ -135,6 +135,7 @@ way to automate analysis of Scala projects with SonarQube.
 <details>
   <summary>Expand to see the changelog.</summary>
   <ul>
+    <li><strong>5.4.0</strong> - Upgraded sonar-scala to 8.4.0.</li>
     <li><strong>5.3.0</strong> - Upgraded sonar-scala to 8.3.0 & SonarQube to 8.3.</li>
     <li><strong>5.2.0</strong> - Upgraded sonar-scala to 8.2.0 & SonarQube to 8.2.</li>
     <li><strong>5.1.0</strong> - Upgraded sonar-scala to 8.1.0.</li>
