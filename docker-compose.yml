@@ -2,7 +2,7 @@ version: "2"
 
 services:
   sonarqube:
-    image: sonarqube:8.3.1-community
+    image: sonarqube:8.4.2-community
     ports:
       - "80:9000"
     networks:
@@ -21,7 +21,7 @@ services:
     depends_on:
       - db
   db:
-    image: postgres:11.7-alpine
+    image: postgres:12.4-alpine
     networks:
       - sonarnet
     environment:
