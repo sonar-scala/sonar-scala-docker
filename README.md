@@ -1,6 +1,6 @@
 # sonar-scala-docker
 
-[![GitHub version](<https://img.shields.io/badge/release_(for_SonarQube_8.4.2-v5.5.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version](<https://img.shields.io/badge/release_(for_SonarQube_8.4.2)-v5.5.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![GitHub version lts](<https://img.shields.io/badge/release_(for_SonarQube_LTS_7.9)-v4.2.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![GitHub version lts 6.7](<https://img.shields.io/badge/release_(for_SonarQube_LTS_6.7)-v2.12.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
@@ -74,7 +74,7 @@ docker run -d \
 - [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube) /
   [SonarQube 7.9 LTS](https://hub.docker.com/_/sonarqube) /
   [SonarQube 8.4.2](https://hub.docker.com/_/sonarqube)
-- [PostgreSQL 11](https://hub.docker.com/_/postgres)
+- [PostgreSQL 12](https://hub.docker.com/_/postgres)
 - [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for
   scalastyle, scoverage and scapegoat
 
