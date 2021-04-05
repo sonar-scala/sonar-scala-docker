@@ -2,7 +2,7 @@ version: "2"
 
 services:
   sonarqube:
-    image: sonarqube:8.5.1-community
+    image: sonarqube:8.7.1-community
     ports:
       - "80:9000"
     networks:
@@ -22,7 +22,7 @@ services:
       - db
     entrypoint: ["bash", "-c", "rm lib/extensions/sonar-scala*; bin/run.sh"]
   db:
-    image: postgres:12.5-alpine
+    image: postgres:12.6-alpine
     networks:
       - sonarnet
     environment:
