@@ -1,0 +1,35 @@
+name: Release
+on:
+  push:
+    tags: ["*"]
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-20.04
+    environment: release
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker login
+        run: echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+        env:
+          DOCKER_USER: ${{secrets.DOCKER_USER}}
+          DOCKER_PASS: ${{secrets.DOCKER_PASS}}
+      - name: Release
+        run: |
+          export VERSION=`jq -r '.current.version' vars.json`
+          ./release.sh
+  release-lts:
+    name: Release LTS
+    runs-on: ubuntu-20.04
+    environment: release-lts
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker login
+        run: echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+        env:
+          DOCKER_USER: ${{secrets.DOCKER_USER}}
+          DOCKER_PASS: ${{secrets.DOCKER_PASS}}
+      - name: Release LTS
+        run: |
+          export VERSION_LTS=`jq -r '.lts.version' vars.json`
+          ./release-lts.sh
