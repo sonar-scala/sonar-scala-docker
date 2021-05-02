@@ -1,0 +1,19 @@
+name: Test
+on:
+  pull_request:
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker build
+        run: |
+          export VERSION=`jq -r '.current.version' vars.json`
+          docker build -t mwizner/sonarqube-scala-plugins:$VERSION current
+          docker build -t mwizner/sonarqube-scala-plugins:$VERSION-full current/full
+      - name: Docker build LTS
+        run: |
+          export VERSION_LTS=`jq -r '.lts.version' vars.json`
+          docker build -t mwizner/sonarqube-scala-plugins:$VERSION_LTS lts
+          docker build -t mwizner/sonarqube-scala-plugins:$VERSION_LTS-full lts/full
