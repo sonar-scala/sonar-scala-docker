@@ -1,48 +1,49 @@
 version: "2"
 
 services:
-  sonarqube-lts:
-    image: sonarqube:7.9.1-community # lts
+  sonarqube:
+    image: sonarqube:8.9.4-community # lts
     ports:
       - "80:9000"
     networks:
-      - sonarnet_lts
+      - sonarnet
     environment:
       - SONARQUBE_JDBC_USERNAME=sonar
       - SONARQUBE_JDBC_PASSWORD=sonar
-      - SONARQUBE_JDBC_URL=jdbc:postgresql://db-lts:5432/sonar
+      - SONARQUBE_JDBC_URL=jdbc:postgresql://db:5432/sonar
     volumes:
-      - ./conf/sonar-lts.properties:/opt/sonarqube/conf/sonar.properties
+      - ./conf/sonar.properties:/opt/sonarqube/conf/sonar.properties
       - ./logs:/opt/sonarqube/logs
-      - sonarqube_lts_data:/opt/sonarqube/data
-      - sonarqube_lts_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
     volumes_from:
-      - plugins-lts
+      - plugins
     depends_on:
-      - db-lts
-  db-lts:
-    image: postgres:10.11-alpine
+      - db
+    entrypoint: ["bash", "-c", "rm lib/extensions/sonar-scala*; bin/run.sh"]
+  db:
+    image: postgres:12.9-alpine
     networks:
-      - sonarnet_lts
+      - sonarnet
     environment:
       - POSTGRES_USER=sonar
       - POSTGRES_PASSWORD=sonar
     volumes:
-      - postgresql_lts:/var/lib/postgresql
-      - postgresql_lts_data:/var/lib/postgresql/data
-  plugins-lts:
-    image: mwizner/sonarqube-scala-plugins:4.2.0
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+  plugins:
+    image: mwizner/sonarqube-scala-plugins:5.8.0
     volumes:
-      - sonarqube_lts_plugins:/opt/sonarqube/extensions/plugins
+      - sonarqube_plugins:/opt/sonarqube/extensions/plugins
     command: /bin/true
 
 networks:
-  sonarnet_lts:
+  sonarnet:
     driver: bridge
 
 volumes:
-  sonarqube_lts_data:
-  sonarqube_lts_bundled-plugins:
-  sonarqube_lts_plugins:
-  postgresql_lts:
-  postgresql_lts_data:
+  sonarqube_data:
+  sonarqube_bundled-plugins:
+  sonarqube_plugins:
+  postgresql:
+  postgresql_data:

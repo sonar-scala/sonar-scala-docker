@@ -1,8 +1,9 @@
 Docker images with out-of-the-box
-[SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts),
+[SonarQube 8.7.1](https://www.sonarqube.org),
+[SonarQube 8.9 LTS](https://www.sonarqube.org/sonarqube-8-9-lts),
 [SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) and
-[SonarQube 8.7.1](https://www.sonarqube.org) instance with support
-for **[Scala](http://www.scala-lang.org)**,
+[SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) instance with
+support for **[Scala](http://www.scala-lang.org)**,
 **[Scoverage](https://github.com/scoverage/scalac-scoverage-plugin)** (code
 coverage metrics) and **[Scalastyle](http://www.scalastyle.org)** +
 **[Scapegoat](https://github.com/sksamuel/scapegoat)** (static code analysis).
@@ -23,6 +24,11 @@ sonar-scala provides Scapegoat support from version `6.5.0` onwards.
   `5.7.0-full`, `latest-full`
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/5.7.0-full/Dockerfile),
   [Release 5.7.0](https://github.com/mwz/sonar-scala-docker/releases/tag/5.7.0)
+- `5.8.0`, `latest-lts` (8.9 LTS)
+  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/5.8.0/Dockerfile),
+  `5.8.0-full`, `latest-lts-full` (8.9 LTS)
+  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/5.8.0-full/Dockerfile),
+  [Release 5.8.0](https://github.com/mwz/sonar-scala-docker/releases/tag/5.8.0)
 - `4.2.0`, `latest-lts` (7.9 LTS)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/4.2.0/Dockerfile),
   `4.2.0-full`, `latest-lts-full` (7.9 LTS)
@@ -43,8 +49,10 @@ For older versions please check the
 | ------------------------ | ----------------- | ---------------------- |
 | 5.7.0      |                   | 8.7.0 |
 | 5.7.0-full | 8.7.1 | 8.7.0 |
-| 4.2.0          |                   | 7.9.0     |
-| 4.2.0-full     | 7.9.1 LTS     | 7.9.0     |
+| 5.8.0          |                   | 8.9.0     |
+| 5.8.0-full     | 8.9.4 LTS     | 8.9.0     |
+| 4.2.0        |                   | 7.9.0   |
+| 4.2.0-full   | 7.9.1 LTS   | 7.9.0   |
 | 2.12.0        |                   | 6.8.0   |
 | 2.12.0-full   | 6.7.7 LTS   | 6.8.0   |
 

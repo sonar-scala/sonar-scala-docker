@@ -1,15 +1,17 @@
 # sonar-scala-docker
 
 [![GitHub version](<https://img.shields.io/badge/release_(for_SonarQube_{{current.sonar}})-v{{current.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
-[![GitHub version lts](<https://img.shields.io/badge/release_(for_SonarQube_LTS_7.9)-v{{lts.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version lts](<https://img.shields.io/badge/release_(for_SonarQube_LTS_8.9)-v{{lts.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version lts 7.9](<https://img.shields.io/badge/release_(for_SonarQube_LTS_7.9)-v{{lts79.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![GitHub version lts 6.7](<https://img.shields.io/badge/release_(for_SonarQube_LTS_6.7)-v{{lts67.version}}-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
 Docker images and docker-compose recipes for out-of-the-box
-[SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts),
+[SonarQube {{current.sonar}}](https://www.sonarqube.org),
+[SonarQube 8.9 LTS](https://www.sonarqube.org/sonarqube-8-9-lts),
 [SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) and
-[SonarQube {{current.sonar}}](https://www.sonarqube.org) instance with support
-for [Scala](http://www.scala-lang.org),
+[SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) instance with
+support for [Scala](http://www.scala-lang.org),
 [Scoverage](https://github.com/scoverage/scalac-scoverage-plugin) (code coverage
 metrics) and [Scalastyle](http://www.scalastyle.org) +
 [Scapegoat](https://github.com/sksamuel/scapegoat) (static code analysis).
@@ -39,8 +41,10 @@ bundled sonar-scala plugin,
 `mwizner/sonarqube-scala-plugins:latest-full`) and
 [`mwizner/sonarqube-scala-plugins:{{lts.version}}-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 (or `mwizner/sonarqube-scala-plugins:latest-lts-full`) for the current LTS
-version. Alternatively, we also provide an image for the old SonarQube 6.7 LTS
+version. Alternatively, we also provide an image for the old SonarQube 7.9 LTS
 version -
+[`mwizner/sonarqube-scala-plugins:{{lts79.version}}-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
+and SonarQube 6.7 LTS version -
 [`mwizner/sonarqube-scala-plugins:{{lts67.version}}-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
 To start the container issue the following command:  
@@ -71,9 +75,10 @@ docker run -d \
 
 ## Dependencies
 
-- [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube) /
-  [SonarQube 7.9 LTS](https://hub.docker.com/_/sonarqube) /
-  [SonarQube {{current.sonar}}](https://hub.docker.com/_/sonarqube)
+- [SonarQube {{current.sonar}}](https://hub.docker.com/_/sonarqube) or
+  [SonarQube 8.9 LTS](https://hub.docker.com/_/sonarqube) or
+  [SonarQube 7.9 LTS](https://hub.docker.com/_/sonarqube) or
+  [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube)
 - [PostgreSQL 12](https://hub.docker.com/_/postgres)
 - [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for
   scalastyle, scoverage and scapegoat
@@ -89,6 +94,7 @@ scapegoat support)_
 |--------|-----------|-------------|
 [{{current.version}}](https://github.com/mwz/sonarqube-scala-docker/releases/tag/{{current.version}}) | {{current.sonar}} [documentation]({{{current.sonarDocs}}}), [changelog]({{{current.sonarChangelog}}}) | [{{current.sonarScala}}](https://github.com/mwz/sonar-scala/releases/tag/v{{current.sonarScala}})
 [{{lts.version}}](https://github.com/mwz/sonarqube-scala-docker/releases/tag/{{lts.version}}) | {{lts.sonar}} [documentation]({{{lts.sonarDocs}}}), [changelog]({{{lts.sonarChangelog}}}) | [{{lts.sonarScala}}](https://github.com/mwz/sonar-scala/releases/tag/v{{lts.sonarScala}})
+[{{lts79.version}}](https://github.com/mwz/sonarqube-scala-docker/releases/tag/{{lts79.version}}) | {{lts79.sonar}} [documentation]({{{lts79.sonarDocs}}}), [changelog]({{{lts79.sonarChangelog}}}) | [{{lts.sonarScala}}](https://github.com/mwz/sonar-scala/releases/tag/v{{lts79.sonarScala}})
 [{{lts67.version}}](https://github.com/mwz/sonarqube-scala-docker/releases/tag/{{lts67.version}}) | {{lts67.sonar}} [documentation]({{{lts67.sonarDocs}}}), [changelog]({{{lts67.sonarChangelog}}}) | [{{lts67.sonarScala}}](https://github.com/mwz/sonar-scala/releases/tag/v{{lts67.sonarScala}})
 <!-- prettier-ignore-end -->
 
@@ -135,6 +141,7 @@ way to automate analysis of Scala projects with SonarQube.
 <details>
   <summary>Expand to see the changelog.</summary>
   <ul>
+    <li><strong>5.8.0</strong> - Upgraded sonar-scala to 8.9.0 & SonarQube to 8.9.4.</li>
     <li><strong>5.7.0</strong> - Upgraded sonar-scala to 8.7.0 & SonarQube to 8.7.1.</li>
     <li><strong>5.6.0</strong> - Upgraded sonar-scala to 8.6.0 & SonarQube to 8.5.1.</li>
     <li><strong>5.5.0</strong> - Upgraded sonar-scala to 8.5.0 & SonarQube to 8.4.</li>

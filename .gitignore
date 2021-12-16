@@ -1,5 +1,6 @@
-logs/
 .idea
+.metals
+.vscode
 *.jar
 *.orig
-.metals
+logs

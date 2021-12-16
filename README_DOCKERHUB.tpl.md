@@ -1,8 +1,9 @@
 Docker images with out-of-the-box
-[SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts),
+[SonarQube {{current.sonar}}](https://www.sonarqube.org),
+[SonarQube 8.9 LTS](https://www.sonarqube.org/sonarqube-8-9-lts),
 [SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) and
-[SonarQube {{current.sonar}}](https://www.sonarqube.org) instance with support
-for **[Scala](http://www.scala-lang.org)**,
+[SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) instance with
+support for **[Scala](http://www.scala-lang.org)**,
 **[Scoverage](https://github.com/scoverage/scalac-scoverage-plugin)** (code
 coverage metrics) and **[Scalastyle](http://www.scalastyle.org)** +
 **[Scapegoat](https://github.com/sksamuel/scapegoat)** (static code analysis).
@@ -23,11 +24,16 @@ sonar-scala provides Scapegoat support from version `6.5.0` onwards.
   `{{current.version}}-full`, `latest-full`
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{current.version}}-full/Dockerfile),
   [Release {{current.version}}](https://github.com/mwz/sonar-scala-docker/releases/tag/{{current.version}})
-- `{{lts.version}}`, `latest-lts` (7.9 LTS)
+- `{{lts.version}}`, `latest-lts` (8.9 LTS)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts.version}}/Dockerfile),
-  `{{lts.version}}-full`, `latest-lts-full` (7.9 LTS)
+  `{{lts.version}}-full`, `latest-lts-full` (8.9 LTS)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts.version}}-full/Dockerfile),
   [Release {{lts.version}}](https://github.com/mwz/sonar-scala-docker/releases/tag/{{lts.version}})
+- `{{lts79.version}}`, `latest-lts` (7.9 LTS)
+  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts79.version}}/Dockerfile),
+  `{{lts79.version}}-full`, `latest-lts-full` (7.9 LTS)
+  [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts79.version}}-full/Dockerfile),
+  [Release {{lts79.version}}](https://github.com/mwz/sonar-scala-docker/releases/tag/{{lts79.version}})
 - `{{lts67.version}}` (6.7 LTS)
   [Dockerfile](https://github.com/mwz/sonar-scala-docker/blob/master/{{lts67.version}}/Dockerfile),
   `{{lts67.version}}-full` (6.7 LTS)
@@ -45,6 +51,8 @@ For older versions please check the
 | {{current.version}}-full | {{current.sonar}} | {{current.sonarScala}} |
 | {{lts.version}}          |                   | {{lts.sonarScala}}     |
 | {{lts.version}}-full     | {{lts.sonar}}     | {{lts.sonarScala}}     |
+| {{lts79.version}}        |                   | {{lts79.sonarScala}}   |
+| {{lts79.version}}-full   | {{lts79.sonar}}   | {{lts79.sonarScala}}   |
 | {{lts67.version}}        |                   | {{lts67.sonarScala}}   |
 | {{lts67.version}}-full   | {{lts67.sonar}}   | {{lts67.sonarScala}}   |
 
