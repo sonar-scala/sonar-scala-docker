@@ -31,5 +31,5 @@ jobs:
           DOCKER_PASS: ${{secrets.DOCKER_PASS}}
       - name: Release LTS
         run: |
-          export VERSION_LTS=`jq -r '.lts.version' vars.json`
+          export VERSION=`jq -r '.lts.version' vars.json`
           ./release-lts.sh
