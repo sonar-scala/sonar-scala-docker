@@ -4,7 +4,7 @@
 FROM bitnami/minideb:stretch
 RUN install_packages curl ca-certificates
 
-ENV SONAR_SCALA_VERSION 8.7.0
+ENV SONAR_SCALA_VERSION 9.0.0
 ENV SQ_EXTENSIONS_DIR "/opt/sonarqube/extensions"
 
 RUN groupadd -g 1000 -r sonarqube && useradd -r -g sonarqube sonarqube

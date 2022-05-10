@@ -79,7 +79,7 @@ docker run -d \
   [SonarQube 8.9 LTS](https://hub.docker.com/_/sonarqube) or
   [SonarQube 7.9 LTS](https://hub.docker.com/_/sonarqube) or
   [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube)
-- [PostgreSQL 12](https://hub.docker.com/_/postgres)
+- [PostgreSQL 12/13](https://hub.docker.com/_/postgres)
 - [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for
   scalastyle, scoverage and scapegoat
 
