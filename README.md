@@ -1,13 +1,13 @@
 # sonar-scala-docker
 
-[![GitHub version](<https://img.shields.io/badge/release_(for_SonarQube_8.7.1)-v5.7.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
+[![GitHub version](<https://img.shields.io/badge/release_(for_SonarQube_9.4.0)-v6.0.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![GitHub version lts](<https://img.shields.io/badge/release_(for_SonarQube_LTS_8.9)-v5.8.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![GitHub version lts 7.9](<https://img.shields.io/badge/release_(for_SonarQube_LTS_7.9)-v4.2.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![GitHub version lts 6.7](<https://img.shields.io/badge/release_(for_SonarQube_LTS_6.7)-v2.12.0-blue.svg>)](https://github.com/mwz/sonarqube-scala-docker/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/mwizner/sonarqube-scala-plugins.svg)](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 
 Docker images and docker-compose recipes for out-of-the-box
-[SonarQube 8.7.1](https://www.sonarqube.org),
+[SonarQube 9.4.0](https://www.sonarqube.org),
 [SonarQube 8.9 LTS](https://www.sonarqube.org/sonarqube-8-9-lts),
 [SonarQube 7.9 LTS](https://www.sonarqube.org/sonarqube-7-9-lts) and
 [SonarQube 6.7 LTS](https://www.sonarqube.org/sonarqube-6-7-lts) instance with
@@ -37,7 +37,7 @@ default SonarQube login details for the Administrator account are `admin:admin`.
 
 You can also use a standalone docker image which contains SonarQube server with
 bundled sonar-scala plugin,
-[`mwizner/sonarqube-scala-plugins:5.7.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)(or
+[`mwizner/sonarqube-scala-plugins:6.0.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)(or
 `mwizner/sonarqube-scala-plugins:latest-full`) and
 [`mwizner/sonarqube-scala-plugins:5.8.0-full`](https://hub.docker.com/r/mwizner/sonarqube-scala-plugins)
 (or `mwizner/sonarqube-scala-plugins:latest-lts-full`) for the current LTS
@@ -58,7 +58,7 @@ docker run -d \
   -e SONARQUBE_JDBC_USERNAME=sonar \
   -e SONARQUBE_JDBC_PASSWORD=sonar \
   -e SONARQUBE_JDBC_URL=jdbc:postgresql://localhost/sonar \
-  mwizner/sonarqube-scala-plugins:5.7.0-full
+  mwizner/sonarqube-scala-plugins:6.0.0-full
 ```
 
 Please note that if you don't specify the `SONARQUBE_JDBC_URL` variable,
@@ -70,16 +70,16 @@ want to try the image, you can use the following command:
 docker run -d \
   --name sonarqube-scala-plugins-full \
   -p 80:9000 \
-  mwizner/sonarqube-scala-plugins:5.7.0-full
+  mwizner/sonarqube-scala-plugins:6.0.0-full
 ```
 
 ## Dependencies
 
-- [SonarQube 8.7.1](https://hub.docker.com/_/sonarqube) or
+- [SonarQube 9.4.0](https://hub.docker.com/_/sonarqube) or
   [SonarQube 8.9 LTS](https://hub.docker.com/_/sonarqube) or
   [SonarQube 7.9 LTS](https://hub.docker.com/_/sonarqube) or
   [SonarQube 6.7 LTS](https://hub.docker.com/_/sonarqube)
-- [PostgreSQL 12](https://hub.docker.com/_/postgres)
+- [PostgreSQL 12/13](https://hub.docker.com/_/postgres)
 - [mwz/sonar-scala](https://github.com/mwz/sonar-scala) - provides support for
   scalastyle, scoverage and scapegoat
 
@@ -92,7 +92,7 @@ scapegoat support)_
 <!-- prettier-ignore-start -->
 |Version | SonarQube | sonar-scala |
 |--------|-----------|-------------|
-[5.7.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/5.7.0) | 8.7.1 [documentation](https://docs.sonarqube.org/8.7), [changelog](https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=16540) | [8.7.0](https://github.com/mwz/sonar-scala/releases/tag/v8.7.0)
+[6.0.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/6.0.0) | 9.4.0 [documentation](https://docs.sonarqube.org/9.4), [changelog](https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=17167) | [9.0.0](https://github.com/mwz/sonar-scala/releases/tag/v9.0.0)
 [5.8.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/5.8.0) | 8.9.4 LTS [documentation](https://docs.sonarqube.org/8.9), [changelog](https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=17027) | [8.9.0](https://github.com/mwz/sonar-scala/releases/tag/v8.9.0)
 [4.2.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/4.2.0) | 7.9.1 LTS [documentation](https://docs.sonarqube.org/7.9), [changelog](https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=15029) | [8.9.0](https://github.com/mwz/sonar-scala/releases/tag/v7.9.0)
 [2.12.0](https://github.com/mwz/sonarqube-scala-docker/releases/tag/2.12.0) | 6.7.7 LTS [documentation](https://docs.sonarqube.org/display/SONARQUBE67/Documentation), [changelog](https://jira.sonarsource.com/jira/secure/ReleaseNote.jspa?projectId=10930&version=14865) | [6.8.0](https://github.com/mwz/sonar-scala/releases/tag/v6.8.0)
@@ -106,6 +106,12 @@ scapegoat support)_
         <td><b>SonarQube</b></td>
         <td><b>sonar-scala</b></td>
         <td><b>sonar-scala-extra</b></td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/5.7.0">5.7.0</a></td>
+        <td>8.7.1 <a href="https://docs.sonarqube.org/8.7">documentation</a>, <a href="https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=16540">changelog</a></td>
+        <td><a href="https://github.com/mwz/sonar-scala/releases/tag/v8.7.0">8.7.0</td>
+        <td></td>
     </tr>
     <tr>
         <td><a href="https://github.com/mwz/sonarqube-scala-docker/releases/tag/5.6.0">5.6.0</a></td>

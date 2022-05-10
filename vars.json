@@ -1,10 +1,10 @@
 {
   "current": {
-    "version": "5.7.0",
-    "sonar": "8.7.1",
-    "sonarDocs": "https://docs.sonarqube.org/8.7",
-    "sonarChangelog": "https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=16540",
-    "sonarScala": "8.7.0"
+    "version": "6.0.0",
+    "sonar": "9.4.0",
+    "sonarDocs": "https://docs.sonarqube.org/9.4",
+    "sonarChangelog": "https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=17167",
+    "sonarScala": "9.0.0"
   },
   "lts": {
     "version": "5.8.0",
@@ -29,6 +29,13 @@
   },
   "versions": {
     "current": [
+      {
+        "version": "5.7.0",
+        "sonar": "8.7.1",
+        "sonarDocs": "https://docs.sonarqube.org/8.7",
+        "sonarChangelog": "https://jira.sonarsource.com/secure/ReleaseNote.jspa?projectId=10930&version=16540",
+        "sonarScala": "8.7.0"
+      },
       {
         "version": "5.6.0",
         "sonar": "8.5.1",
